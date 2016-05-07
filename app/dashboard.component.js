@@ -9,20 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var sport_service_1 = require('./sport.service');
 var DashboardComponent = (function () {
-    function DashboardComponent() {
+    function DashboardComponent(sportService) {
+        this.sportService = sportService;
+        this.sports = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
+        var _this = this;
         // Load sports/activities
-        console.log('Loaded Dashboard');
+        this.sportService.getSports().then(function (sports) {
+            console.log(sports);
+            _this.sports = sports;
+        });
     };
     DashboardComponent = __decorate([
         core_1.Component({
             selector: 'dashboard',
             templateUrl: 'app/dashboard.component.html',
-            styleUrls: ['app/dashboard.component.css']
+            styleUrls: ['app/dashboard.component.css'],
+            providers: [
+                sport_service_1.SportService
+            ]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [sport_service_1.SportService])
     ], DashboardComponent);
     return DashboardComponent;
 }());
