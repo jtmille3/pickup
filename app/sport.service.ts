@@ -5,6 +5,8 @@ import {Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@
 
 import { Sport } from './sport';
 
+import * as _ from 'underscore';
+
 /**
 http://sww.sas.com/~jemill/pickup/services/sport.php/sports
 
@@ -30,7 +32,11 @@ export class SportService {
   }
 
   getSport(id:number) {
-
+    var sport:Sport = _.find(SPORTS, sport => sport.id === id);
+    return Observable.create(observer => {
+      observer.next(sport);
+      observer.complete();
+    });
   }
 
   addSport(sport:any) {

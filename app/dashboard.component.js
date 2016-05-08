@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var sport_service_1 = require('./sport.service');
 var DashboardComponent = (function () {
     function DashboardComponent(sportService) {
@@ -29,6 +30,9 @@ var DashboardComponent = (function () {
             styleUrls: ['app/dashboard.component.css'],
             providers: [
                 sport_service_1.SportService
+            ],
+            directives: [
+                router_deprecated_1.ROUTER_DIRECTIVES
             ]
         }), 
         __metadata('design:paramtypes', [sport_service_1.SportService])

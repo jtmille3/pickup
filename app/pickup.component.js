@@ -9,17 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var sport_service_1 = require('./sport.service');
 var PickupComponent = (function () {
-    function PickupComponent() {
+    function PickupComponent(sportService, routeParams) {
+        this.sportService = sportService;
+        this.routeParams = routeParams;
     }
-    PickupComponent.prototype.ngOnInit = function () { };
+    PickupComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var id = +this.routeParams.get('id');
+        this.sportService.getSport(id).subscribe(function (sport) { return _this.sport = sport; });
+    };
     PickupComponent = __decorate([
         core_1.Component({
             selector: 'pickup',
             templateUrl: 'app/pickup.component.html',
-            styleUrls: ['app/pickup.component.css']
+            styleUrls: ['app/pickup.component.css'],
+            providers: [
+                sport_service_1.SportService
+            ],
+            directives: [
+                router_deprecated_1.ROUTER_DIRECTIVES
+            ]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [sport_service_1.SportService, router_deprecated_1.RouteParams])
     ], PickupComponent);
     return PickupComponent;
 }());

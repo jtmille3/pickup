@@ -21,7 +21,7 @@ import {PickupComponent } from './pickup.component';
     useAsDefault: true
   },
   {
-    path: '/pickup',
+    path: '/pickup/:id',
     name: 'Pickup',
     component: PickupComponent
   }

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var Observable_1 = require('rxjs/Observable');
 var http_1 = require('@angular/http');
+var _ = require('underscore');
 /**
 http://sww.sas.com/~jemill/pickup/services/sport.php/sports
 
@@ -38,6 +39,11 @@ var SportService = (function () {
         });
     };
     SportService.prototype.getSport = function (id) {
+        var sport = _.find(SPORTS, function (sport) { return sport.id === id; });
+        return Observable_1.Observable.create(function (observer) {
+            observer.next(sport);
+            observer.complete();
+        });
     };
     SportService.prototype.addSport = function (sport) {
     };
