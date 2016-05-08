@@ -32,24 +32,38 @@ var SportService = (function () {
     });
     ;
     SportService.prototype.getSports = function () {
-        //return this.http.get(SportService.BASE_URL + '/sports');
         return Observable_1.Observable.create(function (observer) {
             observer.next(SPORTS);
             observer.complete();
         });
     };
     SportService.prototype.getSport = function (id) {
-        var sport = _.find(SPORTS, function (sport) { return sport.id === id; });
+        var sport = _.find(SPORTS, function (_sport) { return _sport.id === id; });
         return Observable_1.Observable.create(function (observer) {
             observer.next(sport);
             observer.complete();
         });
     };
     SportService.prototype.addSport = function (sport) {
+        SPORTS.push(sport);
+        return Observable_1.Observable.create(function (observer) {
+            observer.next(sport);
+            observer.complete();
+        });
     };
     SportService.prototype.updateSport = function (sport) {
+        var index = _.findIndex(SPORTS, function (_sport) { return _sport.id === sport.id; });
+        SPORTS[index] = sport;
+        return Observable_1.Observable.create(function (observer) {
+            observer.next(sport);
+            observer.complete();
+        });
     };
     SportService.prototype.deleteSport = function (id) {
+        SPORTS = _.filter(SPORTS, function (_sport) { return _sport.id !== id; });
+        return Observable_1.Observable.create(function (observer) {
+            observer.complete();
+        });
     };
     SportService = __decorate([
         core_1.Injectable(), 

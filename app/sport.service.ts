@@ -24,7 +24,6 @@ export class SportService {
   constructor(private http: Http) {}
 
   getSports() {
-    //return this.http.get(SportService.BASE_URL + '/sports');
     return Observable.create(observer => {
       observer.next(SPORTS);
       observer.complete();
@@ -32,28 +31,40 @@ export class SportService {
   }
 
   getSport(id:number) {
-    var sport:Sport = _.find(SPORTS, sport => sport.id === id);
+    var sport:Sport = _.find(SPORTS, _sport => _sport.id === id);
     return Observable.create(observer => {
       observer.next(sport);
       observer.complete();
     });
   }
 
-  addSport(sport:any) {
-
+  addSport(sport:Sport) {
+    SPORTS.push(sport);
+    return Observable.create(observer => {
+      observer.next(sport);
+      observer.complete();
+    });
   }
 
   updateSport(sport:Sport) {
-
+    var index:number = _.findIndex(SPORTS, _sport => _sport.id === sport.id);
+    SPORTS[index] = sport;
+    return Observable.create(observer => {
+      observer.next(sport);
+      observer.complete();
+    });
   }
 
   deleteSport(id:number) {
-
+    SPORTS = _.filter(SPORTS, _sport => _sport.id !== id);
+    return Observable.create(observer => {
+      observer.complete();
+    });
   }
 }
 
 // mock sports for now
-let SPORTS = [{
+var SPORTS = [{
   id: 1,
   name: 'Soccer'
 }, {
