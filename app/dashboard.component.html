@@ -1,1 +1,8 @@
-<a class="sport-tile" *ngFor="let sport of sports" [routerLink]="['Pickup', {id:sport.id}]">{{sport.name}}</a>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 dashboard">
+      <a class="sport-tile" *ngFor="let sport of sports" [routerLink]="['Pickup', {id:sport.id}]">{{sport.name}}</a>
+    </div>
+  </div>
+</div>
