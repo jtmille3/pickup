@@ -11,12 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var dashboard_component_1 = require('./dashboard.component');
+var pickup_component_1 = require('./pickup.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'pickup',
+            selector: 'app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
@@ -30,6 +31,11 @@ var AppComponent = (function () {
                 name: 'Dashboard',
                 component: dashboard_component_1.DashboardComponent,
                 useAsDefault: true
+            },
+            {
+                path: '/pickup',
+                name: 'Pickup',
+                component: pickup_component_1.PickupComponent
             }
         ]), 
         __metadata('design:paramtypes', [])

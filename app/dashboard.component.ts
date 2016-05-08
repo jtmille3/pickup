@@ -19,8 +19,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     // Load sports/activities
-    this.sportService.getSports().then(sports => {
-      console.log(sports);
+    this.sportService.getSports().subscribe(sports => {
       this.sports = sports;
     });
   }

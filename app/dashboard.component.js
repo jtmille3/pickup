@@ -18,8 +18,7 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         // Load sports/activities
-        this.sportService.getSports().then(function (sports) {
-            console.log(sports);
+        this.sportService.getSports().subscribe(function (sports) {
             _this.sports = sports;
         });
     };
