@@ -2,7 +2,13 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12 dashboard">
-      <a class="sport-tile" *ngFor="let sport of sports" [routerLink]="['Pickup', {id:sport.id}]">{{sport.name}}</a>
+      <a class="sport-tile" *ngFor="let sport of sports" [routerLink]="['Pickup', {id:sport.id}]">
+        <svg height="150" width="150">
+          <circle cx="75" cy="75" r="75" fill="#222" />
+          <text x="75" y="70" fill="#fff" text-anchor="middle" font-size="20">{{sport.name}}</text>
+          <text x="75" y="95" fill="#fff" text-anchor="middle" font-size="14">{{sport.joined}} signups</text>
+        </svg>
+      </a>
     </div>
   </div>
 </div>

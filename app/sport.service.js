@@ -75,9 +75,11 @@ exports.SportService = SportService;
 // mock sports for now
 var SPORTS = [{
         id: 1,
-        name: 'Soccer'
+        name: 'Soccer',
+        signups: 23
     }, {
         id: 2,
-        name: 'Basketball'
+        name: 'Basketball',
+        signups: 12
     }];
 //# sourceMappingURL=sport.service.js.map
