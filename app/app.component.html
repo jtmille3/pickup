@@ -1,17 +1,24 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand pickup-title" [routerLink]="['Dashboard']">Pickup</a>
+      <a class="navbar-brand pickup-title" [routerLink]="['Dashboard']">SAS Pickup</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li>
+        <li><a href="#???">Basketball</a></li>
+        <li><a href="http://sww.sas.com/~saseao/frisbee.php">Ultimate</a></li>
+        <li><a href="http://soccer/comp/">Competitive</a></li>
+        <li><a href="http://wss.na.sas.com/rfc/sports/SitePages/Field%20Status.aspx">Field Status</a></li>
+        <li><a href="https://www.yahoo.com/news/weather/united-states/north-carolina/cary-2375810/">Weather</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <router-outlet></router-outlet>
+
+<nav class="navbar navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-text">&copy; SAS {{year}}</div>
+  </div>
+</nav>

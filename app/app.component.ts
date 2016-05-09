@@ -26,4 +26,10 @@ import {PickupComponent } from './pickup.component';
     component: PickupComponent
   }
 ])
-export class AppComponent { }
+export class AppComponent {
+  year:number;
+
+  constructor() {
+    this.year = new Date().getFullYear();
+  }
+}

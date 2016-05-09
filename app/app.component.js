@@ -14,6 +14,7 @@ var dashboard_component_1 = require('./dashboard.component');
 var pickup_component_1 = require('./pickup.component');
 var AppComponent = (function () {
     function AppComponent() {
+        this.year = new Date().getFullYear();
     }
     AppComponent = __decorate([
         core_1.Component({
