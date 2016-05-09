@@ -18,8 +18,8 @@ var PickupComponent = (function () {
     }
     PickupComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var id = +this.routeParams.get('id');
-        this.sportService.getSport(id).subscribe(function (sport) { return _this.sport = sport; });
+        var name = this.routeParams.get('name');
+        this.sportService.getSport(name).subscribe(function (sport) { return _this.sport = sport; });
     };
     PickupComponent = __decorate([
         core_1.Component({

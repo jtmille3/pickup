@@ -30,8 +30,8 @@ export class SportService {
     });
   }
 
-  getSport(id:number) {
-    var sport:Sport = _.find(SPORTS, _sport => _sport.id === id);
+  getSport(name:string) {
+    var sport:Sport = _.find(SPORTS, _sport => _sport.name === name);
     return Observable.create(observer => {
       observer.next(sport);
       observer.complete();
@@ -55,8 +55,8 @@ export class SportService {
     });
   }
 
-  deleteSport(id:number) {
-    SPORTS = _.filter(SPORTS, _sport => _sport.id !== id);
+  deleteSport(name:string) {
+    SPORTS = _.filter(SPORTS, _sport => _sport.name !== name);
     return Observable.create(observer => {
       observer.complete();
     });
@@ -72,4 +72,8 @@ var SPORTS = [{
   id: 2,
   name: 'Basketball',
   signups: 12
+}, {
+  id: 3,
+  name: 'Futsal',
+  signups: 7
 }];

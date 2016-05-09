@@ -37,8 +37,8 @@ var SportService = (function () {
             observer.complete();
         });
     };
-    SportService.prototype.getSport = function (id) {
-        var sport = _.find(SPORTS, function (_sport) { return _sport.id === id; });
+    SportService.prototype.getSport = function (name) {
+        var sport = _.find(SPORTS, function (_sport) { return _sport.name === name; });
         return Observable_1.Observable.create(function (observer) {
             observer.next(sport);
             observer.complete();
@@ -59,8 +59,8 @@ var SportService = (function () {
             observer.complete();
         });
     };
-    SportService.prototype.deleteSport = function (id) {
-        SPORTS = _.filter(SPORTS, function (_sport) { return _sport.id !== id; });
+    SportService.prototype.deleteSport = function (name) {
+        SPORTS = _.filter(SPORTS, function (_sport) { return _sport.name !== name; });
         return Observable_1.Observable.create(function (observer) {
             observer.complete();
         });
@@ -81,5 +81,9 @@ var SPORTS = [{
         id: 2,
         name: 'Basketball',
         signups: 12
+    }, {
+        id: 3,
+        name: 'Futsal',
+        signups: 7
     }];
 //# sourceMappingURL=sport.service.js.map

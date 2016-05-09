@@ -25,7 +25,7 @@ export class PickupComponent implements OnInit {
     private routeParams: RouteParams) {}
 
   ngOnInit() {
-    var id:number = +this.routeParams.get('id');
-    this.sportService.getSport(id).subscribe(sport => this.sport = sport);
+    var name:string = this.routeParams.get('name');
+    this.sportService.getSport(name).subscribe(sport => this.sport = sport);
   }
 }

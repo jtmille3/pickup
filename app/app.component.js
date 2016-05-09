@@ -34,7 +34,7 @@ var AppComponent = (function () {
                 useAsDefault: true
             },
             {
-                path: '/pickup/:id',
+                path: '/pickup/:name',
                 name: 'Pickup',
                 component: pickup_component_1.PickupComponent
             }
