@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
-import {DashboardComponent } from './dashboard.component';
-import {PickupComponent } from './pickup.component';
+import {DashboardComponent } from './dashboard/dashboard.component';
+import {PickupComponent } from './pickup/pickup.component';
 
 @Component({
   selector: 'app',

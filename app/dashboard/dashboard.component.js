@@ -10,22 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var sport_service_1 = require('./sport.service');
-var PickupComponent = (function () {
-    function PickupComponent(sportService, routeParams) {
+var sport_service_1 = require('../sport.service');
+var DashboardComponent = (function () {
+    function DashboardComponent(sportService) {
         this.sportService = sportService;
-        this.routeParams = routeParams;
+        this.sports = [];
     }
-    PickupComponent.prototype.ngOnInit = function () {
+    DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var name = this.routeParams.get('name');
-        this.sportService.getSport(name).subscribe(function (sport) { return _this.sport = sport; });
+        // Load sports/activities
+        this.sportService.getSports().subscribe(function (sports) {
+            _this.sports = sports;
+        });
     };
-    PickupComponent = __decorate([
+    DashboardComponent = __decorate([
         core_1.Component({
-            selector: 'pickup',
-            templateUrl: 'app/pickup.component.html',
-            styleUrls: ['app/pickup.component.css'],
+            selector: 'dashboard',
+            templateUrl: 'app/dashboard/dashboard.component.html',
+            styleUrls: ['app/dashboard/dashboard.component.css'],
             providers: [
                 sport_service_1.SportService
             ],
@@ -33,9 +35,9 @@ var PickupComponent = (function () {
                 router_deprecated_1.ROUTER_DIRECTIVES
             ]
         }), 
-        __metadata('design:paramtypes', [sport_service_1.SportService, router_deprecated_1.RouteParams])
-    ], PickupComponent);
-    return PickupComponent;
+        __metadata('design:paramtypes', [sport_service_1.SportService])
+    ], DashboardComponent);
+    return DashboardComponent;
 }());
-exports.PickupComponent = PickupComponent;
-//# sourceMappingURL=pickup.component.js.map
+exports.DashboardComponent = DashboardComponent;
+//# sourceMappingURL=dashboard.component.js.map

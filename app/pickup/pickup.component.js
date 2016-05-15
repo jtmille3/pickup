@@ -10,34 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var sport_service_1 = require('./sport.service');
-var DashboardComponent = (function () {
-    function DashboardComponent(sportService) {
+var pickup_form_component_1 = require('./pickup-form.component');
+var sport_service_1 = require('../sport.service');
+var PickupComponent = (function () {
+    function PickupComponent(sportService, routeParams) {
         this.sportService = sportService;
-        this.sports = [];
+        this.routeParams = routeParams;
     }
-    DashboardComponent.prototype.ngOnInit = function () {
+    PickupComponent.prototype.ngOnInit = function () {
         var _this = this;
-        // Load sports/activities
-        this.sportService.getSports().subscribe(function (sports) {
-            _this.sports = sports;
-        });
+        var name = this.routeParams.get('name');
+        this.sportService.getSport(name).subscribe(function (sport) { return _this.sport = sport; });
     };
-    DashboardComponent = __decorate([
+    PickupComponent = __decorate([
         core_1.Component({
-            selector: 'dashboard',
-            templateUrl: 'app/dashboard.component.html',
-            styleUrls: ['app/dashboard.component.css'],
+            selector: 'pickup',
+            templateUrl: 'app/pickup/pickup.component.html',
+            styleUrls: ['app/pickup/pickup.component.css'],
             providers: [
                 sport_service_1.SportService
             ],
             directives: [
-                router_deprecated_1.ROUTER_DIRECTIVES
+                router_deprecated_1.ROUTER_DIRECTIVES,
+                pickup_form_component_1.PickupFormComponent
             ]
         }), 
-        __metadata('design:paramtypes', [sport_service_1.SportService])
-    ], DashboardComponent);
-    return DashboardComponent;
+        __metadata('design:paramtypes', [sport_service_1.SportService, router_deprecated_1.RouteParams])
+    ], PickupComponent);
+    return PickupComponent;
 }());
-exports.DashboardComponent = DashboardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+exports.PickupComponent = PickupComponent;
+//# sourceMappingURL=pickup.component.js.map
