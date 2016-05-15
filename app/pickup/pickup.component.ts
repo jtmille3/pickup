@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { RouteParams, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
-import { PickupFormComponent } from './pickup-form.component';
+import { PickupSignupComponent } from './pickup-signup.component';
 import { PickupListComponent } from './pickup-list.component';
 
 import { Sport } from '../sport';
@@ -17,7 +17,7 @@ import { SportService } from '../sport.service';
   ],
   directives: [
     ROUTER_DIRECTIVES,
-    PickupFormComponent,
+    PickupSignupComponent,
     PickupListComponent
   ],
   outputs: ['sport']

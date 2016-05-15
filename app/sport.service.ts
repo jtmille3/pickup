@@ -67,7 +67,19 @@ export class SportService {
 var SPORTS = [{
   id: 1,
   name: 'Soccer',
-  signups: 23
+  signups: 23,
+  players: [
+    {
+      id: 'jemill',
+      name: 'Jeff Miller'
+    }
+  ],
+  comments: [
+    {
+      id: 'jemill',
+      text: 'First post'
+    }
+  ]
 }, {
   id: 2,
   name: 'Basketball',

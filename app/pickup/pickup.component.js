@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var pickup_form_component_1 = require('./pickup-form.component');
+var pickup_signup_component_1 = require('./pickup-signup.component');
 var pickup_list_component_1 = require('./pickup-list.component');
 var sport_service_1 = require('../sport.service');
 var PickupComponent = (function () {
@@ -33,7 +33,7 @@ var PickupComponent = (function () {
             ],
             directives: [
                 router_deprecated_1.ROUTER_DIRECTIVES,
-                pickup_form_component_1.PickupFormComponent,
+                pickup_signup_component_1.PickupSignupComponent,
                 pickup_list_component_1.PickupListComponent
             ],
             outputs: ['sport']

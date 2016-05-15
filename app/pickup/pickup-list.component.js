@@ -12,7 +12,9 @@ var core_1 = require('@angular/core');
 var PickupListComponent = (function () {
     function PickupListComponent() {
     }
-    PickupListComponent.prototype.ngOnInit = function () { };
+    PickupListComponent.prototype.ngOnInit = function () {
+        console.log(this.sport);
+    };
     PickupListComponent = __decorate([
         core_1.Component({
             selector: 'pickup-list',
