@@ -9,20 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PickupFormComponent = (function () {
-    function PickupFormComponent() {
+var PickupListComponent = (function () {
+    function PickupListComponent() {
     }
-    PickupFormComponent.prototype.ngOnInit = function () { };
-    PickupFormComponent = __decorate([
+    PickupListComponent.prototype.ngOnInit = function () { };
+    PickupListComponent = __decorate([
         core_1.Component({
-            selector: 'pickup-form',
-            templateUrl: 'app/pickup/pickup-form.component.html',
-            styleUrls: ['app/pickup/pickup-form.component.css'],
+            selector: 'pickup-list',
+            templateUrl: 'app/pickup/pickup-list.component.html',
+            styleUrls: ['app/pickup/pickup-list.component.css'],
             inputs: ['sport']
         }), 
         __metadata('design:paramtypes', [])
-    ], PickupFormComponent);
-    return PickupFormComponent;
+    ], PickupListComponent);
+    return PickupListComponent;
 }());
-exports.PickupFormComponent = PickupFormComponent;
-//# sourceMappingURL=pickup-form.component.js.map
+exports.PickupListComponent = PickupListComponent;
+//# sourceMappingURL=pickup-list.component.js.map

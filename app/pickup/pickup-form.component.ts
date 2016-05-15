@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'pickup-form',
   templateUrl: 'app/pickup/pickup-form.component.html',
-  styleUrls: ['app/pickup/pickup-form.component.css']
+  styleUrls: ['app/pickup/pickup-form.component.css'],
+  inputs: ['sport']
 })
 export class PickupFormComponent implements OnInit {
 
