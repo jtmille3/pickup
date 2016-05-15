@@ -8,10 +8,7 @@ import {PickupComponent } from './pickup.component';
   selector: 'app',
   templateUrl: 'app/app.component.html',
   styleUrls: ['app/app.component.css'],
-  directives: [ROUTER_DIRECTIVES],
-  providers: [
-    ROUTER_PROVIDERS
-  ]
+  directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
   {

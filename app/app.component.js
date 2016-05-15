@@ -21,10 +21,7 @@ var AppComponent = (function () {
             selector: 'app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
-            providers: [
-                router_deprecated_1.ROUTER_PROVIDERS
-            ]
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES]
         }),
         router_deprecated_1.RouteConfig([
             {
