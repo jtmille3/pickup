@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, OnInit } from '@angular/core';
 
 import { RouteParams, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
@@ -19,12 +19,11 @@ import { SportService } from '../sport.service';
     ROUTER_DIRECTIVES,
     PickupSignupComponent,
     PickupListComponent
-  ],
-  outputs: ['sport']
+  ]
 })
 export class PickupComponent implements OnInit {
 
-  sport:Sport;
+  @Output() sport:Sport;
 
   constructor(
     private sportService:SportService,

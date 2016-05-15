@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var pickup_signup_component_1 = require('./pickup-signup.component');
 var pickup_list_component_1 = require('./pickup-list.component');
+var sport_1 = require('../sport');
 var sport_service_1 = require('../sport.service');
 var PickupComponent = (function () {
     function PickupComponent(sportService, routeParams) {
@@ -23,6 +24,10 @@ var PickupComponent = (function () {
         var name = this.routeParams.get('name');
         this.sportService.getSport(name).subscribe(function (sport) { return _this.sport = sport; });
     };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', sport_1.Sport)
+    ], PickupComponent.prototype, "sport", void 0);
     PickupComponent = __decorate([
         core_1.Component({
             selector: 'pickup',
@@ -35,8 +40,7 @@ var PickupComponent = (function () {
                 router_deprecated_1.ROUTER_DIRECTIVES,
                 pickup_signup_component_1.PickupSignupComponent,
                 pickup_list_component_1.PickupListComponent
-            ],
-            outputs: ['sport']
+            ]
         }), 
         __metadata('design:paramtypes', [sport_service_1.SportService, router_deprecated_1.RouteParams])
     ], PickupComponent);
