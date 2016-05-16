@@ -9,12 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var sport_1 = require('../sport');
 var PickupListComponent = (function () {
     function PickupListComponent() {
     }
     PickupListComponent.prototype.ngOnInit = function () {
         console.log(this.sport);
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', sport_1.Sport)
+    ], PickupListComponent.prototype, "sport", void 0);
     PickupListComponent = __decorate([
         core_1.Component({
             selector: 'pickup-list',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Sport } from '../sport';
 
@@ -10,7 +10,7 @@ import { Sport } from '../sport';
 })
 export class PickupListComponent implements OnInit {
 
-  sport: Sport;
+  @Input() sport: Sport;
 
   constructor() {}
 
