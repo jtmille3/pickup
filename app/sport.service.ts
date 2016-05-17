@@ -5,7 +5,7 @@ import {Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@
 
 import { Sport } from './sport';
 
-import * as _ from 'underscore';
+declare var _;
 
 /**
 http://sww.sas.com/~jemill/pickup/services/sport.php/sports
