@@ -3,12 +3,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Sport } from '../sport';
 
 @Component({
-  selector: 'pickup-list',
-  templateUrl: 'app/pickup/pickup-list.component.html',
-  styleUrls: ['app/pickup/pickup-list.component.css'],
+  selector: 'pickup-participants',
+  templateUrl: 'app/pickup/pickup-participants.component.html',
+  styleUrls: ['app/pickup/pickup-participants.component.css'],
   inputs: ['sport']
 })
-export class PickupListComponent implements OnInit {
+export class PickupParticipantsComponent implements OnInit {
 
   @Input() sport: Sport;
 

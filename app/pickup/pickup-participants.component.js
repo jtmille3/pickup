@@ -10,26 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var sport_1 = require('../sport');
-var PickupListComponent = (function () {
-    function PickupListComponent() {
+var PickupParticipantsComponent = (function () {
+    function PickupParticipantsComponent() {
     }
-    PickupListComponent.prototype.ngOnInit = function () {
+    PickupParticipantsComponent.prototype.ngOnInit = function () {
         console.log(this.sport);
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', sport_1.Sport)
-    ], PickupListComponent.prototype, "sport", void 0);
-    PickupListComponent = __decorate([
+    ], PickupParticipantsComponent.prototype, "sport", void 0);
+    PickupParticipantsComponent = __decorate([
         core_1.Component({
-            selector: 'pickup-list',
-            templateUrl: 'app/pickup/pickup-list.component.html',
-            styleUrls: ['app/pickup/pickup-list.component.css'],
+            selector: 'pickup-participants',
+            templateUrl: 'app/pickup/pickup-participants.component.html',
+            styleUrls: ['app/pickup/pickup-participants.component.css'],
             inputs: ['sport']
         }), 
         __metadata('design:paramtypes', [])
-    ], PickupListComponent);
-    return PickupListComponent;
+    ], PickupParticipantsComponent);
+    return PickupParticipantsComponent;
 }());
-exports.PickupListComponent = PickupListComponent;
-//# sourceMappingURL=pickup-list.component.js.map
+exports.PickupParticipantsComponent = PickupParticipantsComponent;
+//# sourceMappingURL=pickup-participants.component.js.map

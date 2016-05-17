@@ -3,7 +3,8 @@ import { Component, Output, OnInit } from '@angular/core';
 import { RouteParams, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
 import { PickupSignupComponent } from './pickup-signup.component';
-import { PickupListComponent } from './pickup-list.component';
+import { PickupParticipantsComponent } from './pickup-participants.component';
+import { PickupCommentsComponent } from './pickup-comments.component';
 
 import { Sport } from '../sport';
 import { SportService } from '../sport.service';
@@ -18,7 +19,8 @@ import { SportService } from '../sport.service';
   directives: [
     ROUTER_DIRECTIVES,
     PickupSignupComponent,
-    PickupListComponent
+    PickupParticipantsComponent,
+    PickupCommentsComponent
   ]
 })
 export class PickupComponent implements OnInit {
