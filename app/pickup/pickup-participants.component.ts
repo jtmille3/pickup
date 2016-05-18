@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Inject } from '@angular/core';
 
 import { Participant } from '../participant';
 
@@ -11,9 +11,14 @@ export class PickupParticipantsComponent implements OnInit {
 
   @Input() participants: Participant[];
 
-  constructor() {}
+  constructor(@Inject('USER_ID') private USER_ID:string) {}
 
   ngOnInit() {
     console.log(this.participants);
+  }
+
+  onDelete(participant:Participant) {
+    // move this into a comment service...
+    this.participants = _.without(this.participants, participant);
   }
 }

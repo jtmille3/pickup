@@ -8,12 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var core_1 = require('@angular/core');
 var PickupParticipantsComponent = (function () {
-    function PickupParticipantsComponent() {
+    function PickupParticipantsComponent(USER_ID) {
+        this.USER_ID = USER_ID;
     }
     PickupParticipantsComponent.prototype.ngOnInit = function () {
         console.log(this.participants);
+    };
+    PickupParticipantsComponent.prototype.onDelete = function (participant) {
+        // move this into a comment service...
+        this.participants = _.without(this.participants, participant);
     };
     __decorate([
         core_1.Input(), 
@@ -24,8 +32,9 @@ var PickupParticipantsComponent = (function () {
             selector: 'pickup-participants',
             templateUrl: 'app/pickup/pickup-participants.component.html',
             styleUrls: ['app/pickup/pickup-participants.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
+        }),
+        __param(0, core_1.Inject('USER_ID')), 
+        __metadata('design:paramtypes', [String])
     ], PickupParticipantsComponent);
     return PickupParticipantsComponent;
 }());

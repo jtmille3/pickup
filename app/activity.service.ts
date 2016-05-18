@@ -65,14 +65,13 @@ export class ActivityService {
 
 // mock sports for now
 var ACTIVITIES = [{
-  id: 1,
+  activityId: 1,
   name: 'Soccer',
+  space: { name: 'Field 1'},
+  time: { name: '11:30 AM'},
+  guests: '1',
   signups: 23,
   participants: [
-    {
-      participantId: 'jemill',
-      name: 'Jeff Miller'
-    },
     {
       participantId: 'joblow',
       name: 'Joe Blow'

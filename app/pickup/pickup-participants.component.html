@@ -2,5 +2,8 @@
   <div>
     <img src="app/img/unknown.jpeg" />
   </div>
-  {{participant.name}}
+  <div>{{participant.name}}</div>
+  <!-- <div>
+    <button *ngIf="participant.participantId === USER_ID" class="btn btn-danger" (click)="onDelete(participant)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button>
+  </div> -->
 </div>
