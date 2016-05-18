@@ -19,3 +19,13 @@
   width: 53px;
   height: 66px;
 }
+
+.event .control-label {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0px 5px;
+}
+
+button {
+  min-width: 100px;
+}
