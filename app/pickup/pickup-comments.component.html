@@ -8,10 +8,10 @@
   <table class="table table-bordered">
     <tr *ngFor="let comment of comments">
       <td>
-        <img src="blank" />
+        <img src="app/img/unknown.jpeg" />
       </td>
       <td>
-        <a href="">{{comment.participantId}}</a> {{comment.timestamp | date:'MMMM d yyyy, h:mm:ss a'}}
+        <a href="http://sww.sas.com/sww/tools/phonelist/?keyword={{comment.participantId}}">{{comment.participantId}}</a> {{comment.timestamp | date:'MMMM d yyyy, h:mm:ss a'}}
         <br/>
         {{comment.text}}
       </td>
