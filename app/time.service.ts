@@ -59,10 +59,10 @@ export class TimeService {
 var TIMES = [
   {
     timeId: 1,
-    name: 'Field 1'
+    name: '11:30 AM'
   },
   {
     timeId: 2,
-    name: 'Field 2'
+    name: '12:30 PM'
   }
 ];

@@ -1,6 +1,7 @@
 import { Component, Input , OnInit } from '@angular/core';
 
 import { Activity } from '../activity';
+import { Participant } from '../participant';
 import { Time } from '../time';
 import { Space } from '../space';
 
@@ -40,6 +41,17 @@ export class PickupSignupComponent implements OnInit {
   }
 
   onSubmit() {
+    if(!this.time && !this.space) {
+      return;
+    }
+
+    var participant = new Participant();
+    participant.participantId = 'jemill';
+    participant.name = 'Jeff Miller';
+
+    // TODO: do this through a service 
+    this.activity.participants.push(participant);
+
     console.log('Submit');
   }
 

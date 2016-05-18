@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var activity_1 = require('../activity');
+var participant_1 = require('../participant');
 var time_service_1 = require('../time.service');
 var space_service_1 = require('../space.service');
 var PickupSignupComponent = (function () {
@@ -25,6 +26,14 @@ var PickupSignupComponent = (function () {
         this.spaceService.getSpaces(this.activity).subscribe(function (spaces) { return _this.spaces = spaces; });
     };
     PickupSignupComponent.prototype.onSubmit = function () {
+        if (!this.time && !this.space) {
+            return;
+        }
+        var participant = new participant_1.Participant();
+        participant.participantId = 'jemill';
+        participant.name = 'Jeff Miller';
+        // TODO: do this through a service 
+        this.activity.participants.push(participant);
         console.log('Submit');
     };
     PickupSignupComponent.prototype.onSelectTime = function (time) {
