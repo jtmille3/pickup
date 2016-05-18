@@ -1,13 +1,13 @@
-<div *ngFor="let event of events">
-  <form class="form-inline event">
+<div *ngFor="let event of events" class="event">
+  <form class="form-inline">
     <div class="form-group">
-      <button *ngIf="event.participants.indexOf(me) === -1" class="btn btn-success" (click)="onAddMe(event)"><i class="glyphicon glyphicon-thumbs-up"></i> I'm in!</button>
-      <button *ngIf="event.participants.indexOf(me) !== -1" class="btn btn-danger" (click)="onRemoveMe(event)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button>
-      <span class="control-label">{{event.space.name}} @ {{event.time.name}}</span>
+      <button *ngIf="event.participants.indexOf(USER_ID) === -1" class="btn btn-success" (click)="onAddMe(event)"><i class="glyphicon glyphicon-thumbs-up"></i> I'm in!</button>
+      <button *ngIf="event.participants.indexOf(USER_ID) !== -1" class="btn btn-danger" (click)="onRemoveMe(event)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button>
+      <span class="control-label">{{event.space.name}} @ {{event.time.name}} - {{event.participants.length}} Active</span>
     </div>
   </form>
   <div class="participant well" *ngFor="let participant of event.participants"
-          [class.me]="participant.participantId === USER_ID">
+          [class.me]="participant.participantId === USER_ID.participantId">
     <div>
       <img src="app/img/unknown.jpeg" />
     </div>

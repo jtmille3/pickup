@@ -18,18 +18,15 @@ var PickupParticipantsComponent = (function () {
         this.USER_ID = USER_ID;
     }
     PickupParticipantsComponent.prototype.ngOnInit = function () {
-        this.me = new participant_1.Participant();
-        this.me.participantId = this.USER_ID;
-        this.me.name = this.USER_ID;
     };
     PickupParticipantsComponent.prototype.onAddMe = function (event) {
-        if (_.contains(event.participants, this.me)) {
+        if (_.contains(event.participants, this.USER_ID)) {
             return;
         }
-        event.participants.push(this.me);
+        event.participants.push(this.USER_ID);
     };
     PickupParticipantsComponent.prototype.onRemoveMe = function (event) {
-        event.participants = _.without(event.participants, this.me);
+        event.participants = _.without(event.participants, this.USER_ID);
     };
     __decorate([
         core_1.Input(), 
@@ -42,7 +39,7 @@ var PickupParticipantsComponent = (function () {
             styleUrls: ['app/pickup/pickup-participants.component.css']
         }),
         __param(0, core_1.Inject('USER_ID')), 
-        __metadata('design:paramtypes', [String])
+        __metadata('design:paramtypes', [participant_1.Participant])
     ], PickupParticipantsComponent);
     return PickupParticipantsComponent;
 }());

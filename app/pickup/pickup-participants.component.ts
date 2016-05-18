@@ -12,25 +12,20 @@ export class PickupParticipantsComponent implements OnInit {
 
   @Input() events: Event[];
 
-  private me: Participant;
-
-  constructor(@Inject('USER_ID') private USER_ID:string) {}
+  constructor(@Inject('USER_ID') private USER_ID:Participant) {}
 
   ngOnInit() {
-    this.me = new Participant();
-    this.me.participantId = this.USER_ID;
-    this.me.name = this.USER_ID;
   }
 
   onAddMe(event:Event) {
-    if(_.contains(event.participants, this.me)) {
+    if(_.contains(event.participants, this.USER_ID)) {
       return;
     }
 
-    event.participants.push(this.me);
+    event.participants.push(this.USER_ID);
   }
 
   onRemoveMe(event:Event) {
-    event.participants = _.without(event.participants, this.me);
+    event.participants = _.without(event.participants, this.USER_ID);
   }
 }
