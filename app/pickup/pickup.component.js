@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var pickup_participants_component_1 = require('./pickup-participants.component');
+var pickup_events_component_1 = require('./pickup-events.component');
 var pickup_comments_component_1 = require('./pickup-comments.component');
 var activity_1 = require('../activity');
 var activity_service_1 = require('../activity.service');
@@ -39,7 +39,7 @@ var PickupComponent = (function () {
             ],
             directives: [
                 router_deprecated_1.ROUTER_DIRECTIVES,
-                pickup_participants_component_1.PickupParticipantsComponent,
+                pickup_events_component_1.PickupEventsComponent,
                 pickup_comments_component_1.PickupCommentsComponent,
                 bootstrap_datetimepicker_component_1.BootstrapDateTimePickerComponent
             ]

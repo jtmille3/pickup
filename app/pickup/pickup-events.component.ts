@@ -5,10 +5,10 @@ import { Participant } from '../participant';
 
 @Component({
   selector: 'pickup-participants',
-  templateUrl: 'app/pickup/pickup-participants.component.html',
-  styleUrls: ['app/pickup/pickup-participants.component.css']
+  templateUrl: 'app/pickup/pickup-events.component.html',
+  styleUrls: ['app/pickup/pickup-events.component.css']
 })
-export class PickupParticipantsComponent implements OnInit {
+export class PickupEventsComponent implements OnInit {
 
   @Input() events: Event[];
 

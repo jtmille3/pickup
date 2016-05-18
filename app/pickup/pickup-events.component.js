@@ -13,35 +13,35 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var core_1 = require('@angular/core');
 var participant_1 = require('../participant');
-var PickupParticipantsComponent = (function () {
-    function PickupParticipantsComponent(USER_ID) {
+var PickupEventsComponent = (function () {
+    function PickupEventsComponent(USER_ID) {
         this.USER_ID = USER_ID;
     }
-    PickupParticipantsComponent.prototype.ngOnInit = function () {
+    PickupEventsComponent.prototype.ngOnInit = function () {
     };
-    PickupParticipantsComponent.prototype.onAddMe = function (event) {
+    PickupEventsComponent.prototype.onAddMe = function (event) {
         if (_.contains(event.participants, this.USER_ID)) {
             return;
         }
         event.participants.push(this.USER_ID);
     };
-    PickupParticipantsComponent.prototype.onRemoveMe = function (event) {
+    PickupEventsComponent.prototype.onRemoveMe = function (event) {
         event.participants = _.without(event.participants, this.USER_ID);
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
-    ], PickupParticipantsComponent.prototype, "events", void 0);
-    PickupParticipantsComponent = __decorate([
+    ], PickupEventsComponent.prototype, "events", void 0);
+    PickupEventsComponent = __decorate([
         core_1.Component({
             selector: 'pickup-participants',
-            templateUrl: 'app/pickup/pickup-participants.component.html',
-            styleUrls: ['app/pickup/pickup-participants.component.css']
+            templateUrl: 'app/pickup/pickup-events.component.html',
+            styleUrls: ['app/pickup/pickup-events.component.css']
         }),
         __param(0, core_1.Inject('USER_ID')), 
         __metadata('design:paramtypes', [participant_1.Participant])
-    ], PickupParticipantsComponent);
-    return PickupParticipantsComponent;
+    ], PickupEventsComponent);
+    return PickupEventsComponent;
 }());
-exports.PickupParticipantsComponent = PickupParticipantsComponent;
-//# sourceMappingURL=pickup-participants.component.js.map
+exports.PickupEventsComponent = PickupEventsComponent;
+//# sourceMappingURL=pickup-events.component.js.map
