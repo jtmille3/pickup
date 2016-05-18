@@ -1,12 +1,17 @@
-import { Component, Input, OnInit, Inject } from '@angular/core';
+import { Component, Input, Output, OnInit, Inject } from '@angular/core';
 
 import { Event } from '../event';
 import { Participant } from '../participant';
 
+import { PickupParticipantsComponent } from './pickup-participants.component';
+
 @Component({
-  selector: 'pickup-participants',
+  selector: 'pickup-events',
   templateUrl: 'app/pickup/pickup-events.component.html',
-  styleUrls: ['app/pickup/pickup-events.component.css']
+  styleUrls: ['app/pickup/pickup-events.component.css'],
+  directives: [
+    PickupParticipantsComponent
+  ]
 })
 export class PickupEventsComponent implements OnInit {
 
@@ -14,8 +19,7 @@ export class PickupEventsComponent implements OnInit {
 
   constructor(@Inject('USER_ID') private USER_ID:Participant) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onAddMe(event:Event) {
     if(_.contains(event.participants, this.USER_ID)) {

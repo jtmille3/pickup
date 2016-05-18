@@ -1,0 +1,7 @@
+<div class="participant well" *ngFor="let participant of participants"
+        [class.me]="participant.participantId === USER_ID.participantId">
+  <div>
+    <img src="app/img/unknown.jpeg" />
+  </div>
+  <div>{{participant.name}}</div>
+</div>
