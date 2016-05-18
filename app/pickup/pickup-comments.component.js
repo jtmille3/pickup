@@ -17,16 +17,22 @@ var PickupCommentsComponent = (function () {
         console.log(this.comments);
     };
     PickupCommentsComponent.prototype.onSubmit = function () {
-        if (this.comment) {
-            var comment = new comment_1.Comment();
-            comment.commentId = -1;
-            comment.participantId = 'jemill';
-            comment.text = this.comment;
-            comment.timestamp = new Date();
-            console.log(this.comment);
-            this.comments.push(comment);
-            this.comment = '';
+        if (!this.comment) {
+            return;
         }
+        // move this into a comment service...
+        var comment = new comment_1.Comment();
+        comment.commentId = -1;
+        comment.participantId = 'jemill';
+        comment.text = this.comment;
+        comment.timestamp = new Date();
+        console.log(this.comment);
+        this.comments.push(comment);
+        this.comment = '';
+    };
+    PickupCommentsComponent.prototype.onDelete = function (comment) {
+        // move this into a comment service...
+        this.comments = _.without(this.comments, comment);
     };
     __decorate([
         core_1.Input(), 
