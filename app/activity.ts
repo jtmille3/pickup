@@ -1,7 +1,7 @@
 import { Participant } from './participant';
 import { Comment } from './comment';
 
-export class Sport {
+export class Activity {
   id:number;
   name:string;
   signups:number;

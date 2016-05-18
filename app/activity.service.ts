@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 
 import {Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@angular/http';
 
-import { Sport } from './sport';
+import { Activity } from './activity';
 
 declare var _;
 
@@ -17,46 +17,46 @@ $app->put('/sports/:id', 'updateSport');
 $app->delete('/sports/:id',   'deleteSport');
 */
 @Injectable()
-export class SportService {
+export class ActivityService {
 
   public static get BASE_URL():string { return 'services/sport.php' };
 
   constructor(private http: Http) {}
 
-  getSports() {
+  getActivities() {
     return Observable.create(observer => {
-      observer.next(SPORTS);
+      observer.next(ACTIVITIES);
       observer.complete();
     });
   }
 
-  getSport(name:string) {
-    var sport:Sport = _.find(SPORTS, _sport => _sport.name === name);
+  getActivity(name:string) {
+    var activity:Activity = _.find(ACTIVITIES, _activity => _activity.name === name);
     return Observable.create(observer => {
-      observer.next(sport);
+      observer.next(activity);
       observer.complete();
     });
   }
 
-  addSport(sport:Sport) {
-    SPORTS.push(sport);
+  addActivity(activity:Activity) {
+    ACTIVITIES.push(activity);
     return Observable.create(observer => {
-      observer.next(sport);
+      observer.next(activity);
       observer.complete();
     });
   }
 
-  updateSport(sport:Sport) {
-    var index:number = _.findIndex(SPORTS, _sport => _sport.id === sport.id);
-    SPORTS[index] = sport;
+  updateActivity(activity:Activity) {
+    var index:number = _.findIndex(ACTIVITIES, _activity => _activity.id === activity.id);
+    ACTIVITIES[index] = activity;
     return Observable.create(observer => {
-      observer.next(sport);
+      observer.next(activity);
       observer.complete();
     });
   }
 
-  deleteSport(name:string) {
-    SPORTS = _.filter(SPORTS, _sport => _sport.name !== name);
+  deleteActivity(name:string) {
+    ACTIVITIES = _.filter(ACTIVITIES, _activity => _activity.name !== name);
     return Observable.create(observer => {
       observer.complete();
     });
@@ -64,7 +64,7 @@ export class SportService {
 }
 
 // mock sports for now
-var SPORTS = [{
+var ACTIVITIES = [{
   id: 1,
   name: 'Soccer',
   signups: 23,

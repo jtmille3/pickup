@@ -13,29 +13,29 @@ var router_deprecated_1 = require('@angular/router-deprecated');
 var pickup_signup_component_1 = require('./pickup-signup.component');
 var pickup_participants_component_1 = require('./pickup-participants.component');
 var pickup_comments_component_1 = require('./pickup-comments.component');
-var sport_1 = require('../sport');
-var sport_service_1 = require('../sport.service');
+var activity_1 = require('../activity');
+var activity_service_1 = require('../activity.service');
 var PickupComponent = (function () {
-    function PickupComponent(sportService, routeParams) {
-        this.sportService = sportService;
+    function PickupComponent(activityService, routeParams) {
+        this.activityService = activityService;
         this.routeParams = routeParams;
     }
     PickupComponent.prototype.ngOnInit = function () {
         var _this = this;
         var name = this.routeParams.get('name');
-        this.sportService.getSport(name).subscribe(function (sport) { return _this.sport = sport; });
+        this.activityService.getActivity(name).subscribe(function (activity) { return _this.activity = activity; });
     };
     __decorate([
         core_1.Output(), 
-        __metadata('design:type', sport_1.Sport)
-    ], PickupComponent.prototype, "sport", void 0);
+        __metadata('design:type', activity_1.Activity)
+    ], PickupComponent.prototype, "activity", void 0);
     PickupComponent = __decorate([
         core_1.Component({
             selector: 'pickup',
             templateUrl: 'app/pickup/pickup.component.html',
             styleUrls: ['app/pickup/pickup.component.css'],
             providers: [
-                sport_service_1.SportService
+                activity_service_1.ActivityService
             ],
             directives: [
                 router_deprecated_1.ROUTER_DIRECTIVES,
@@ -44,7 +44,7 @@ var PickupComponent = (function () {
                 pickup_comments_component_1.PickupCommentsComponent
             ]
         }), 
-        __metadata('design:paramtypes', [sport_service_1.SportService, router_deprecated_1.RouteParams])
+        __metadata('design:paramtypes', [activity_service_1.ActivityService, router_deprecated_1.RouteParams])
     ], PickupComponent);
     return PickupComponent;
 }());

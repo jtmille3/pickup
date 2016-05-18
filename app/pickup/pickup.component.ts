@@ -6,15 +6,15 @@ import { PickupSignupComponent } from './pickup-signup.component';
 import { PickupParticipantsComponent } from './pickup-participants.component';
 import { PickupCommentsComponent } from './pickup-comments.component';
 
-import { Sport } from '../sport';
-import { SportService } from '../sport.service';
+import { Activity } from '../activity';
+import { ActivityService } from '../activity.service';
 
 @Component({
   selector: 'pickup',
   templateUrl: 'app/pickup/pickup.component.html',
   styleUrls: ['app/pickup/pickup.component.css'],
   providers: [
-    SportService
+    ActivityService
   ],
   directives: [
     ROUTER_DIRECTIVES,
@@ -25,14 +25,14 @@ import { SportService } from '../sport.service';
 })
 export class PickupComponent implements OnInit {
 
-  @Output() sport:Sport;
+  @Output() activity:Activity;
 
   constructor(
-    private sportService:SportService,
+    private activityService:ActivityService,
     private routeParams: RouteParams) {}
 
   ngOnInit() {
     var name:string = this.routeParams.get('name');
-    this.sportService.getSport(name).subscribe(sport => this.sport = sport);
+    this.activityService.getActivity(name).subscribe(activity => this.activity = activity);
   }
 }

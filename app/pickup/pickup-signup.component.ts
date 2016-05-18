@@ -1,6 +1,6 @@
 import { Component, Input , OnInit } from '@angular/core';
 
-import { Sport } from '../sport';
+import { Activity } from '../activity';
 
 import { BootstrapDateTimePickerComponent } from '../components/bootstrap-datetimepicker.component';
 
@@ -14,12 +14,12 @@ import { BootstrapDateTimePickerComponent } from '../components/bootstrap-dateti
 })
 export class PickupSignupComponent implements OnInit {
 
-  @Input() sport: Sport;
+  @Input() activity: Activity;
 
   constructor() {}
 
   ngOnInit() {
-    console.log(this.sport);
+    console.log(this.activity);
   }
 
   submit() {

@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var sport_1 = require('../sport');
+var activity_1 = require('../activity');
 var bootstrap_datetimepicker_component_1 = require('../components/bootstrap-datetimepicker.component');
 var PickupSignupComponent = (function () {
     function PickupSignupComponent() {
     }
     PickupSignupComponent.prototype.ngOnInit = function () {
-        console.log(this.sport);
+        console.log(this.activity);
     };
     PickupSignupComponent.prototype.submit = function () {
         console.log('Submit');
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', sport_1.Sport)
-    ], PickupSignupComponent.prototype, "sport", void 0);
+        __metadata('design:type', activity_1.Activity)
+    ], PickupSignupComponent.prototype, "activity", void 0);
     PickupSignupComponent = __decorate([
         core_1.Component({
             selector: 'pickup-signup',

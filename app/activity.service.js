@@ -20,59 +20,59 @@ $app->post('/sports', 'addSport');
 $app->put('/sports/:id', 'updateSport');
 $app->delete('/sports/:id',   'deleteSport');
 */
-var SportService = (function () {
-    function SportService(http) {
+var ActivityService = (function () {
+    function ActivityService(http) {
         this.http = http;
     }
-    Object.defineProperty(SportService, "BASE_URL", {
+    Object.defineProperty(ActivityService, "BASE_URL", {
         get: function () { return 'services/sport.php'; },
         enumerable: true,
         configurable: true
     });
     ;
-    SportService.prototype.getSports = function () {
+    ActivityService.prototype.getActivities = function () {
         return Observable_1.Observable.create(function (observer) {
-            observer.next(SPORTS);
+            observer.next(ACTIVITIES);
             observer.complete();
         });
     };
-    SportService.prototype.getSport = function (name) {
-        var sport = _.find(SPORTS, function (_sport) { return _sport.name === name; });
+    ActivityService.prototype.getActivity = function (name) {
+        var activity = _.find(ACTIVITIES, function (_activity) { return _activity.name === name; });
         return Observable_1.Observable.create(function (observer) {
-            observer.next(sport);
+            observer.next(activity);
             observer.complete();
         });
     };
-    SportService.prototype.addSport = function (sport) {
-        SPORTS.push(sport);
+    ActivityService.prototype.addActivity = function (activity) {
+        ACTIVITIES.push(activity);
         return Observable_1.Observable.create(function (observer) {
-            observer.next(sport);
+            observer.next(activity);
             observer.complete();
         });
     };
-    SportService.prototype.updateSport = function (sport) {
-        var index = _.findIndex(SPORTS, function (_sport) { return _sport.id === sport.id; });
-        SPORTS[index] = sport;
+    ActivityService.prototype.updateActivity = function (activity) {
+        var index = _.findIndex(ACTIVITIES, function (_activity) { return _activity.id === activity.id; });
+        ACTIVITIES[index] = activity;
         return Observable_1.Observable.create(function (observer) {
-            observer.next(sport);
+            observer.next(activity);
             observer.complete();
         });
     };
-    SportService.prototype.deleteSport = function (name) {
-        SPORTS = _.filter(SPORTS, function (_sport) { return _sport.name !== name; });
+    ActivityService.prototype.deleteActivity = function (name) {
+        ACTIVITIES = _.filter(ACTIVITIES, function (_activity) { return _activity.name !== name; });
         return Observable_1.Observable.create(function (observer) {
             observer.complete();
         });
     };
-    SportService = __decorate([
+    ActivityService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], SportService);
-    return SportService;
+    ], ActivityService);
+    return ActivityService;
 }());
-exports.SportService = SportService;
+exports.ActivityService = ActivityService;
 // mock sports for now
-var SPORTS = [{
+var ACTIVITIES = [{
         id: 1,
         name: 'Soccer',
         signups: 23,
@@ -103,4 +103,4 @@ var SPORTS = [{
         name: 'Futsal',
         signups: 7
     }];
-//# sourceMappingURL=sport.service.js.map
+//# sourceMappingURL=activity.service.js.map

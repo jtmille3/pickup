@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 
 import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
-import { SportService } from '../sport.service';
-import { Sport } from '../sport';
+import { ActivityService } from '../activity.service';
+import { Activity } from '../activity';
 
 @Component({
   selector: 'dashboard',
   templateUrl: 'app/dashboard/dashboard.component.html',
   styleUrls: ['app/dashboard/dashboard.component.css'],
   providers: [
-    SportService
+    ActivityService
   ],
   directives: [
     ROUTER_DIRECTIVES
@@ -18,14 +18,14 @@ import { Sport } from '../sport';
 })
 export class DashboardComponent implements OnInit {
 
-  sports:Sport[] = [];
+  activities:Activity[] = [];
 
-  constructor(private sportService:SportService) {}
+  constructor(private activityService:ActivityService) {}
 
   ngOnInit() {
     // Load sports/activities
-    this.sportService.getSports().subscribe(sports => {
-      this.sports = sports;
+    this.activityService.getActivities().subscribe(activities => {
+      this.activities = activities;
     });
   }
 }

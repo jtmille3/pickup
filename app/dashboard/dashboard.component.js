@@ -10,17 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var sport_service_1 = require('../sport.service');
+var activity_service_1 = require('../activity.service');
 var DashboardComponent = (function () {
-    function DashboardComponent(sportService) {
-        this.sportService = sportService;
-        this.sports = [];
+    function DashboardComponent(activityService) {
+        this.activityService = activityService;
+        this.activities = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         // Load sports/activities
-        this.sportService.getSports().subscribe(function (sports) {
-            _this.sports = sports;
+        this.activityService.getActivities().subscribe(function (activities) {
+            _this.activities = activities;
         });
     };
     DashboardComponent = __decorate([
@@ -29,13 +29,13 @@ var DashboardComponent = (function () {
             templateUrl: 'app/dashboard/dashboard.component.html',
             styleUrls: ['app/dashboard/dashboard.component.css'],
             providers: [
-                sport_service_1.SportService
+                activity_service_1.ActivityService
             ],
             directives: [
                 router_deprecated_1.ROUTER_DIRECTIVES
             ]
         }), 
-        __metadata('design:paramtypes', [sport_service_1.SportService])
+        __metadata('design:paramtypes', [activity_service_1.ActivityService])
     ], DashboardComponent);
     return DashboardComponent;
 }());
