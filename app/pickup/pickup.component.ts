@@ -2,7 +2,6 @@ import { Component, Output, OnInit } from '@angular/core';
 
 import { RouteParams, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
-import { PickupSignupComponent } from './pickup-signup.component';
 import { PickupParticipantsComponent } from './pickup-participants.component';
 import { PickupCommentsComponent } from './pickup-comments.component';
 
@@ -20,7 +19,6 @@ import { BootstrapDateTimePickerComponent } from '../components/bootstrap-dateti
   ],
   directives: [
     ROUTER_DIRECTIVES,
-    PickupSignupComponent,
     PickupParticipantsComponent,
     PickupCommentsComponent,
     BootstrapDateTimePickerComponent

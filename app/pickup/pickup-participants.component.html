@@ -1,11 +1,18 @@
-<div class="participant well" *ngFor="let participant of participants"
-    [class.me]="participant.participantId === USER_ID"
-    (click)="onEdit(participant)">
-  <div>
-    <img src="app/img/unknown.jpeg" />
+<div *ngFor="let event of events">
+  <form class="form-inline">
+    <div class="form-group">
+      <h3 class="event control-label">
+        <button *ngIf="event.participants.indexOf(me) === -1" class="btn btn-success" (click)="onAddMe(event)"><i class="glyphicon glyphicon-thumbs-in"></i> I'm in!</button>
+        <button *ngIf="event.participants.indexOf(me) !== -1" class="btn btn-danger" (click)="onRemoveMe(event)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button>
+        <span>{{event.space.name}} @ {{event.time.name}}</span>
+      </h3>
+    </div>
+  </form>
+  <div class="participant well" *ngFor="let participant of event.participants"
+          [class.me]="participant.participantId === USER_ID">
+    <div>
+      <img src="app/img/unknown.jpeg" />
+    </div>
+    <div>{{participant.name}}</div>
   </div>
-  <div>{{participant.name}}</div>
-  <!-- <div>
-    <button *ngIf="participant.participantId === USER_ID" class="btn btn-danger" (click)="onDelete(participant)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button>
-  </div> -->
 </div>

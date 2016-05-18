@@ -12,27 +12,29 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
+var participant_1 = require('../participant');
 var PickupParticipantsComponent = (function () {
     function PickupParticipantsComponent(USER_ID) {
         this.USER_ID = USER_ID;
     }
     PickupParticipantsComponent.prototype.ngOnInit = function () {
-        console.log(this.participants);
+        this.me = new participant_1.Participant();
+        this.me.participantId = this.USER_ID;
+        this.me.name = this.USER_ID;
     };
-    PickupParticipantsComponent.prototype.onDelete = function (participant) {
-        // move this into a comment service...
-        this.participants = _.without(this.participants, participant);
-    };
-    PickupParticipantsComponent.prototype.onEdit = function (participant) {
-        if (participant.participantId !== this.USER_ID) {
+    PickupParticipantsComponent.prototype.onAddMe = function (event) {
+        if (_.contains(event.participants, this.me)) {
             return;
         }
-        console.log(participant);
+        event.participants.push(this.me);
+    };
+    PickupParticipantsComponent.prototype.onRemoveMe = function (event) {
+        event.participants = _.without(event.participants, this.me);
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
-    ], PickupParticipantsComponent.prototype, "participants", void 0);
+    ], PickupParticipantsComponent.prototype, "events", void 0);
     PickupParticipantsComponent = __decorate([
         core_1.Component({
             selector: 'pickup-participants',

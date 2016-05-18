@@ -75,16 +75,7 @@ exports.ActivityService = ActivityService;
 var ACTIVITIES = [{
         activityId: 1,
         name: 'Soccer',
-        space: { name: 'Field 1' },
-        time: { name: '11:30 AM' },
-        guests: '1',
         signups: 23,
-        participants: [
-            {
-                participantId: 'joblow',
-                name: 'Joe Blow'
-            }
-        ],
         comments: [
             {
                 commentId: 0,
@@ -98,14 +89,38 @@ var ACTIVITIES = [{
                 text: 'Do not delete me',
                 timestamp: new Date()
             }
-        ]
+        ],
+        events: [{
+                time: { name: '11:30 AM' },
+                space: { name: 'Field 1' },
+                participants: [{
+                        participantId: 'joblow',
+                        name: 'Joe Blow'
+                    }]
+            }, {
+                time: { name: '12:30 PM' },
+                space: { name: 'Field 1' },
+                participants: []
+            }, {
+                time: { name: '11:30 AM' },
+                space: { name: 'Field 2' },
+                participants: []
+            }, {
+                time: { name: '12:30 PM' },
+                space: { name: 'Field 2' },
+                participants: []
+            }]
     }, {
         id: 2,
         name: 'Basketball',
-        signups: 12
+        signups: 12,
+        comments: [],
+        events: []
     }, {
         id: 3,
         name: 'Futsal',
-        signups: 7
+        signups: 7,
+        comments: [],
+        events: []
     }];
 //# sourceMappingURL=activity.service.js.map

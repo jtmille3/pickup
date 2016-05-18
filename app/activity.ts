@@ -1,11 +1,12 @@
 import { Participant } from './participant';
 import { Comment } from './comment';
+import { Event } from './event';
 
 export class Activity {
   id:number;
   name:string;
   signups:number;
 
-  participants:Participant[];
   comments:Comment[];
+  events:Event[];
 }

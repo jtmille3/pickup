@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Inject } from '@angular/core';
 
+import { Event } from '../event';
 import { Participant } from '../participant';
 
 @Component({
@@ -9,24 +10,27 @@ import { Participant } from '../participant';
 })
 export class PickupParticipantsComponent implements OnInit {
 
-  @Input() participants: Participant[];
+  @Input() events: Event[];
+
+  private me: Participant;
 
   constructor(@Inject('USER_ID') private USER_ID:string) {}
 
   ngOnInit() {
-    console.log(this.participants);
+    this.me = new Participant();
+    this.me.participantId = this.USER_ID;
+    this.me.name = this.USER_ID;
   }
 
-  onDelete(participant:Participant) {
-    // move this into a comment service...
-    this.participants = _.without(this.participants, participant);
-  }
-
-  onEdit(participant:Participant) {
-    if(participant.participantId !== this.USER_ID) {
+  onAddMe(event:Event) {
+    if(_.contains(event.participants, this.me)) {
       return;
     }
 
-    console.log(participant);
+    event.participants.push(this.me);
+  }
+
+  onRemoveMe(event:Event) {
+    event.participants = _.without(event.participants, this.me);
   }
 }
