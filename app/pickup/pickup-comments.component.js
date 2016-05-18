@@ -15,6 +15,9 @@ var PickupCommentsComponent = (function () {
     PickupCommentsComponent.prototype.ngOnInit = function () {
         console.log(this.comments);
     };
+    PickupCommentsComponent.prototype.onSubmit = function () {
+        console.log(this.comment);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
