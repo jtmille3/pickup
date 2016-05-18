@@ -1,4 +1,6 @@
 export class Comment {
-  id:number;
+  commentId:number;
+  participantId:string;
   text:string;
+  timestamp:Date;
 }

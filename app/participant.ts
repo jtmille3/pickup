@@ -1,4 +1,4 @@
 export class Participant {
-  id:number;
+  participantId:string;
   name:string;
 }

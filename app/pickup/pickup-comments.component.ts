@@ -21,7 +21,10 @@ export class PickupCommentsComponent implements OnInit {
   onSubmit() {
     if(this.comment) {
       var comment:Comment = new Comment();
+      comment.commentId = -1;
+      comment.participantId = 'jemill';
       comment.text = this.comment;
+      comment.timestamp = new Date();
 
       console.log(this.comment);
       this.comments.push(comment);

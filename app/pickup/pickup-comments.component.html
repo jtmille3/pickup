@@ -4,6 +4,22 @@
     <button class="btn btn-primary" (click)="onSubmit()">Comment</button>
   </form>
 </div>
-<div *ngFor="let comment of comments">
-  {{comment.text}}
+<div *ngIf="comments.length" class="well">
+  <div *ngFor="let comment of comments">
+    <table>
+      <tr>
+        <td rowspan="2">
+          <img src="blank" />
+        </td>
+        <td>
+          <a href="">{{comment.participantId}}</a> {{comment.timestamp | date:'MMMM d yyyy, h:mm:ss a'}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{comment.text}}
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>

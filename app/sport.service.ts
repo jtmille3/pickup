@@ -70,18 +70,20 @@ var SPORTS = [{
   signups: 23,
   participants: [
     {
-      id: 'jemill',
+      participantId: 'jemill',
       name: 'Jeff Miller'
     },
     {
-      id: 'joblow',
+      participantId: 'joblow',
       name: 'Joe Blow'
     }
   ],
   comments: [
     {
-      id: 'jemill',
-      text: 'First post'
+      commentId: 0,
+      participantId: 'jemill',
+      text: 'First post',
+      timestamp: new Date()
     }
   ]
 }, {

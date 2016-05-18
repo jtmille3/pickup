@@ -19,7 +19,10 @@ var PickupCommentsComponent = (function () {
     PickupCommentsComponent.prototype.onSubmit = function () {
         if (this.comment) {
             var comment = new comment_1.Comment();
+            comment.commentId = -1;
+            comment.participantId = 'jemill';
             comment.text = this.comment;
+            comment.timestamp = new Date();
             console.log(this.comment);
             this.comments.push(comment);
             this.comment = '';
