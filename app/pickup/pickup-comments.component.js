@@ -8,14 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var core_1 = require('@angular/core');
 var comment_1 = require('../comment');
 var PickupCommentsComponent = (function () {
-    function PickupCommentsComponent() {
+    function PickupCommentsComponent(USER_ID) {
+        this.USER_ID = USER_ID;
     }
-    PickupCommentsComponent.prototype.ngOnInit = function () {
-        console.log(this.comments);
-    };
+    PickupCommentsComponent.prototype.ngOnInit = function () { };
     PickupCommentsComponent.prototype.onSubmit = function () {
         if (!this.comment) {
             return;
@@ -43,8 +45,9 @@ var PickupCommentsComponent = (function () {
             selector: 'pickup-comments',
             templateUrl: 'app/pickup/pickup-comments.component.html',
             styleUrls: ['app/pickup/pickup-comments.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
+        }),
+        __param(0, core_1.Inject('USER_ID')), 
+        __metadata('design:paramtypes', [Object])
     ], PickupCommentsComponent);
     return PickupCommentsComponent;
 }());

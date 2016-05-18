@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Inject } from '@angular/core';
 
 import { Comment } from '../comment';
 
@@ -14,11 +14,9 @@ export class PickupCommentsComponent implements OnInit {
   @Input() comments: Comment[];
   comment:string;
 
-  constructor() {}
+  constructor(@Inject('USER_ID') private USER_ID) {}
 
-  ngOnInit() {
-    console.log(this.comments);
-  }
+  ngOnInit() {}
 
   onSubmit() {
     if(!this.comment) {

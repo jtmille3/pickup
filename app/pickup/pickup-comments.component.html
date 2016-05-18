@@ -5,7 +5,7 @@
   </form>
 </div>
 <div *ngIf="comments.length" class="well">
-  <table class="table table-bordered">
+  <table class="table">
     <tr *ngFor="let comment of comments">
       <td>
         <img src="app/img/unknown.jpeg" />
@@ -16,7 +16,7 @@
         {{comment.text}}
       </td>
       <td>
-        <button class="btn btn-danger glyphicon glyphicon-trash" (click)="onDelete(comment)"></button>
+        <button *ngIf="comment.participantId === USER_ID" class="btn btn-danger glyphicon glyphicon-trash" (click)="onDelete(comment)"></button>
       </td>
     </tr>
   </table>

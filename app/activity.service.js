@@ -92,6 +92,12 @@ var ACTIVITIES = [{
                 participantId: 'jemill',
                 text: 'First post',
                 timestamp: new Date()
+            },
+            {
+                commentId: 0,
+                participantId: 'joblow',
+                text: 'Do not delete me',
+                timestamp: new Date()
             }
         ]
     }, {
