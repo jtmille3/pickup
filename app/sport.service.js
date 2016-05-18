@@ -76,10 +76,14 @@ var SPORTS = [{
         id: 1,
         name: 'Soccer',
         signups: 23,
-        players: [
+        participants: [
             {
                 id: 'jemill',
                 name: 'Jeff Miller'
+            },
+            {
+                id: 'joblow',
+                name: 'Joe Blow'
             }
         ],
         comments: [

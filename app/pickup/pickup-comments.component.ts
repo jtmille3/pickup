@@ -1,20 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Sport } from '../sport';
+import { Comment } from '../comment';
 
 @Component({
   selector: 'pickup-comments',
   templateUrl: 'app/pickup/pickup-comments.component.html',
-  styleUrls: ['app/pickup/pickup-comments.component.css'],
-  inputs: ['sport']
+  styleUrls: ['app/pickup/pickup-comments.component.css']
 })
 export class PickupCommentsComponent implements OnInit {
 
-  @Input() sport: Sport;
+  @Input() comments: Comment[];
 
   constructor() {}
 
   ngOnInit() {
-    console.log(this.sport);
+    console.log(this.comments);
   }
 }

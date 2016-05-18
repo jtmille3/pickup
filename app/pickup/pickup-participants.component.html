@@ -1,1 +1,3 @@
-<div *ngIf="sport">Participants for {{sport.name}}</div>
+<div *ngFor="let participant of participants">
+  {{participant.name}}
+</div>

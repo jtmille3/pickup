@@ -1,1 +1,3 @@
-<div *ngIf="sport">Comments for {{sport.name}}</div>
+<div *ngFor="let comment of comments">
+  {{comment.text}}
+</div>

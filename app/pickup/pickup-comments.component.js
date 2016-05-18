@@ -9,23 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var sport_1 = require('../sport');
 var PickupCommentsComponent = (function () {
     function PickupCommentsComponent() {
     }
     PickupCommentsComponent.prototype.ngOnInit = function () {
-        console.log(this.sport);
+        console.log(this.comments);
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', sport_1.Sport)
-    ], PickupCommentsComponent.prototype, "sport", void 0);
+        __metadata('design:type', Array)
+    ], PickupCommentsComponent.prototype, "comments", void 0);
     PickupCommentsComponent = __decorate([
         core_1.Component({
             selector: 'pickup-comments',
             templateUrl: 'app/pickup/pickup-comments.component.html',
-            styleUrls: ['app/pickup/pickup-comments.component.css'],
-            inputs: ['sport']
+            styleUrls: ['app/pickup/pickup-comments.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], PickupCommentsComponent);
