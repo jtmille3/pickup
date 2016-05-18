@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var comment_1 = require('../comment');
 var PickupCommentsComponent = (function () {
     function PickupCommentsComponent() {
     }
@@ -16,7 +17,13 @@ var PickupCommentsComponent = (function () {
         console.log(this.comments);
     };
     PickupCommentsComponent.prototype.onSubmit = function () {
-        console.log(this.comment);
+        if (this.comment) {
+            var comment = new comment_1.Comment();
+            comment.text = this.comment;
+            console.log(this.comment);
+            this.comments.push(comment);
+            this.comment = '';
+        }
     };
     __decorate([
         core_1.Input(), 

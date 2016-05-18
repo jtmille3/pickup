@@ -19,6 +19,14 @@ export class PickupCommentsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.comment);
+    if(this.comment) {
+      var comment:Comment = new Comment();
+      comment.text = this.comment;
+
+      console.log(this.comment);
+      this.comments.push(comment);
+
+      this.comment = '';
+    }
   }
 }
