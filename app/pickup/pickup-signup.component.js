@@ -8,15 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var core_1 = require('@angular/core');
 var activity_1 = require('../activity');
 var participant_1 = require('../participant');
 var time_service_1 = require('../time.service');
 var space_service_1 = require('../space.service');
 var PickupSignupComponent = (function () {
-    function PickupSignupComponent(timeService, spaceService) {
+    function PickupSignupComponent(timeService, spaceService, USER_ID) {
         this.timeService = timeService;
         this.spaceService = spaceService;
+        this.USER_ID = USER_ID;
         this.guest = 0;
     }
     PickupSignupComponent.prototype.ngOnInit = function () {
@@ -26,13 +30,18 @@ var PickupSignupComponent = (function () {
         this.spaceService.getSpaces(this.activity).subscribe(function (spaces) { return _this.spaces = spaces; });
     };
     PickupSignupComponent.prototype.onSubmit = function () {
+        var _this = this;
         if (!this.time && !this.space) {
+            return;
+        }
+        // TODO: Cheap way to ignore multiple sign-ins, should be specific to space and time too
+        if (_.find(this.activity.participants, function (participant) { return participant.participantId === _this.USER_ID; })) {
             return;
         }
         var participant = new participant_1.Participant();
         participant.participantId = 'jemill';
         participant.name = 'Jeff Miller';
-        // TODO: do this through a service 
+        // TODO: do this through a service
         this.activity.participants.push(participant);
         console.log('Submit');
     };
@@ -61,8 +70,9 @@ var PickupSignupComponent = (function () {
                 time_service_1.TimeService,
                 space_service_1.SpaceService
             ]
-        }), 
-        __metadata('design:paramtypes', [time_service_1.TimeService, space_service_1.SpaceService])
+        }),
+        __param(2, core_1.Inject('USER_ID')), 
+        __metadata('design:paramtypes', [time_service_1.TimeService, space_service_1.SpaceService, String])
     ], PickupSignupComponent);
     return PickupSignupComponent;
 }());

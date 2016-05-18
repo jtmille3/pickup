@@ -21,4 +21,12 @@ export class PickupParticipantsComponent implements OnInit {
     // move this into a comment service...
     this.participants = _.without(this.participants, participant);
   }
+
+  onEdit(participant:Participant) {
+    if(participant.participantId !== this.USER_ID) {
+      return;
+    }
+
+    console.log(participant);
+  }
 }

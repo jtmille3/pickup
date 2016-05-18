@@ -23,6 +23,12 @@ var PickupParticipantsComponent = (function () {
         // move this into a comment service...
         this.participants = _.without(this.participants, participant);
     };
+    PickupParticipantsComponent.prototype.onEdit = function (participant) {
+        if (participant.participantId !== this.USER_ID) {
+            return;
+        }
+        console.log(participant);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)

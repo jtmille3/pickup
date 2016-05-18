@@ -1,4 +1,6 @@
-<div class="participant well" *ngFor="let participant of participants">
+<div class="participant well" *ngFor="let participant of participants"
+    [class.me]="participant.participantId === USER_ID"
+    (click)="onEdit(participant)">
   <div>
     <img src="app/img/unknown.jpeg" />
   </div>

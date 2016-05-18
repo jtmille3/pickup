@@ -1,4 +1,4 @@
-import { Component, Input , OnInit } from '@angular/core';
+import { Component, Input, OnInit, Inject } from '@angular/core';
 
 import { Activity } from '../activity';
 import { Participant } from '../participant';
@@ -30,7 +30,8 @@ export class PickupSignupComponent implements OnInit {
 
   constructor(
     private timeService:TimeService,
-    private spaceService:SpaceService
+    private spaceService:SpaceService,
+    @Inject('USER_ID') private USER_ID:string
   ) {}
 
   ngOnInit() {
@@ -45,11 +46,16 @@ export class PickupSignupComponent implements OnInit {
       return;
     }
 
+    // TODO: Cheap way to ignore multiple sign-ins, should be specific to space and time too
+    if(_.find(this.activity.participants, participant => participant.participantId === this.USER_ID)) {
+      return;
+    }
+
     var participant = new Participant();
     participant.participantId = 'jemill';
     participant.name = 'Jeff Miller';
 
-    // TODO: do this through a service 
+    // TODO: do this through a service
     this.activity.participants.push(participant);
 
     console.log('Submit');
