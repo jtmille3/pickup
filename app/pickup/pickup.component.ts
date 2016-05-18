@@ -9,6 +9,8 @@ import { PickupCommentsComponent } from './pickup-comments.component';
 import { Activity } from '../activity';
 import { ActivityService } from '../activity.service';
 
+import { BootstrapDateTimePickerComponent } from '../components/bootstrap-datetimepicker.component';
+
 @Component({
   selector: 'pickup',
   templateUrl: 'app/pickup/pickup.component.html',
@@ -20,7 +22,8 @@ import { ActivityService } from '../activity.service';
     ROUTER_DIRECTIVES,
     PickupSignupComponent,
     PickupParticipantsComponent,
-    PickupCommentsComponent
+    PickupCommentsComponent,
+    BootstrapDateTimePickerComponent
   ]
 })
 export class PickupComponent implements OnInit {

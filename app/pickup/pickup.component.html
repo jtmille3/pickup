@@ -1,12 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8">
       <pickup-signup [activity]="activity"></pickup-signup>
-    </div>
-    <div class="col-md-4">
       <pickup-participants [participants]="activity.participants"></pickup-participants>
     </div>
     <div class="col-md-4">
+      <div class="well">
+        <div class="form-group">
+          <bootstrap-datetimepicker>Loading...</bootstrap-datetimepicker>
+        </div>
+      </div>
       <pickup-comments [comments]="activity.comments"></pickup-comments>
     </div>
   </div>

@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var activity_1 = require('../activity');
-var bootstrap_datetimepicker_component_1 = require('../components/bootstrap-datetimepicker.component');
 var PickupSignupComponent = (function () {
     function PickupSignupComponent() {
     }
@@ -28,10 +27,7 @@ var PickupSignupComponent = (function () {
         core_1.Component({
             selector: 'pickup-signup',
             templateUrl: 'app/pickup/pickup-signup.component.html',
-            styleUrls: ['app/pickup/pickup-signup.component.css'],
-            directives: [
-                bootstrap_datetimepicker_component_1.BootstrapDateTimePickerComponent
-            ]
+            styleUrls: ['app/pickup/pickup-signup.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], PickupSignupComponent);

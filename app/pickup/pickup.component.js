@@ -15,6 +15,7 @@ var pickup_participants_component_1 = require('./pickup-participants.component')
 var pickup_comments_component_1 = require('./pickup-comments.component');
 var activity_1 = require('../activity');
 var activity_service_1 = require('../activity.service');
+var bootstrap_datetimepicker_component_1 = require('../components/bootstrap-datetimepicker.component');
 var PickupComponent = (function () {
     function PickupComponent(activityService, routeParams) {
         this.activityService = activityService;
@@ -41,7 +42,8 @@ var PickupComponent = (function () {
                 router_deprecated_1.ROUTER_DIRECTIVES,
                 pickup_signup_component_1.PickupSignupComponent,
                 pickup_participants_component_1.PickupParticipantsComponent,
-                pickup_comments_component_1.PickupCommentsComponent
+                pickup_comments_component_1.PickupCommentsComponent,
+                bootstrap_datetimepicker_component_1.BootstrapDateTimePickerComponent
             ]
         }), 
         __metadata('design:paramtypes', [activity_service_1.ActivityService, router_deprecated_1.RouteParams])
