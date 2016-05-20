@@ -14,7 +14,9 @@ export class PickupCommentsComponent implements OnInit {
   @Input() comments: Comment[];
   comment:string;
 
-  constructor(@Inject('USER_ID') private USER_ID) {}
+  constructor(
+    @Inject('USER_ID') private USER_ID
+  ) {}
 
   ngOnInit() {}
 

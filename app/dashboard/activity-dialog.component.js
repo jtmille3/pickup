@@ -10,40 +10,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var activity_dialog_component_1 = require('./activity-dialog.component');
 var activity_service_1 = require('../activity.service');
-var DashboardComponent = (function () {
-    function DashboardComponent(activityService) {
+var activity_1 = require('../activity');
+var ActivityDialogComponent = (function () {
+    function ActivityDialogComponent(activityService) {
         this.activityService = activityService;
-        this.activities = [];
-        this.toggle = false;
     }
-    DashboardComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        // Load sports/activities
-        this.activityService.getActivities().subscribe(function (activities) {
-            _this.activities = activities;
-        });
+    ActivityDialogComponent.prototype.ngOnInit = function () { };
+    ActivityDialogComponent.prototype.onAddActivity = function () {
+        if (!this.name) {
+            return;
+        }
+        var activity = new activity_1.Activity();
+        activity.name = this.name;
+        this.activityService.addActivity(activity);
+        $('#activity-model').modal('toggle');
     };
-    DashboardComponent.prototype.onAddActivity = function () {
-        this.toggle = true;
-    };
-    DashboardComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], ActivityDialogComponent.prototype, "toggle", void 0);
+    ActivityDialogComponent = __decorate([
         core_1.Component({
-            selector: 'dashboard',
-            templateUrl: 'app/dashboard/dashboard.component.html',
-            styleUrls: ['app/dashboard/dashboard.component.css'],
+            selector: 'activity-dialog',
+            templateUrl: 'app/dashboard/activity-dialog.component.html',
+            styleUrls: ['app/dashboard/activity-dialog.component.css'],
             providers: [
                 activity_service_1.ActivityService
             ],
             directives: [
-                router_deprecated_1.ROUTER_DIRECTIVES,
-                activity_dialog_component_1.ActivityDialogComponent
+                router_deprecated_1.ROUTER_DIRECTIVES
             ]
         }), 
         __metadata('design:paramtypes', [activity_service_1.ActivityService])
-    ], DashboardComponent);
-    return DashboardComponent;
+    ], ActivityDialogComponent);
+    return ActivityDialogComponent;
 }());
-exports.DashboardComponent = DashboardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+exports.ActivityDialogComponent = ActivityDialogComponent;
+//# sourceMappingURL=activity-dialog.component.js.map

@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
+import { ActivityDialogComponent } from './activity-dialog.component';
+
 import { ActivityService } from '../activity.service';
 import { Activity } from '../activity';
+
+declare var $;
 
 @Component({
   selector: 'dashboard',
@@ -13,12 +17,15 @@ import { Activity } from '../activity';
     ActivityService
   ],
   directives: [
-    ROUTER_DIRECTIVES
+    ROUTER_DIRECTIVES,
+    ActivityDialogComponent
   ]
 })
 export class DashboardComponent implements OnInit {
 
   activities:Activity[] = [];
+
+  toggle:boolean = false;
 
   constructor(private activityService:ActivityService) {}
 
@@ -27,5 +34,9 @@ export class DashboardComponent implements OnInit {
     this.activityService.getActivities().subscribe(activities => {
       this.activities = activities;
     });
+  }
+
+  onAddActivity() {
+    this.toggle = true
   }
 }

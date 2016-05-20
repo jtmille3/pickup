@@ -2,7 +2,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12 dashboard">
-      <a class="sport-tile" *ngFor="let activity of activities" [routerLink]="['Pickup', {name:activity.name}]">
+      <a class="add-activity" (click)="onAddActivity()"><i class="glyphicon glyphicon-plus"></i></a>
+      <a class="activity-tile" *ngFor="let activity of activities" [routerLink]="['Pickup', {name:activity.name}]">
         <svg height="150" width="150">
           <circle cx="75" cy="75" r="75" fill="#222" />
           <text x="75" y="70" fill="#fff" text-anchor="middle" font-size="20">{{activity.name}}</text>
@@ -12,3 +13,4 @@
     </div>
   </div>
 </div>
+<activity-dialog [toggle]="toggle"></activity-dialog>
