@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
+import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
 
 import {DashboardComponent } from './dashboard/dashboard.component';
 import {PickupComponent } from './pickup/pickup.component';
@@ -10,18 +10,9 @@ import {PickupComponent } from './pickup/pickup.component';
   styleUrls: ['app/app.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
-@RouteConfig([
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: DashboardComponent,
-    useAsDefault: true
-  },
-  {
-    path: '/pickup/:name',
-    name: 'Pickup',
-    component: PickupComponent
-  }
+@Routes([
+  { path: '/dashboard', component: DashboardComponent },
+  { path: '/pickup/:name', component: PickupComponent }
 ])
 export class AppComponent {
   year:number;

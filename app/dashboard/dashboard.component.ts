@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { ActivityDialogComponent } from '../activity/activity-dialog.component';
 

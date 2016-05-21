@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var pickup_events_component_1 = require('./pickup-events.component');
 var pickup_comments_component_1 = require('./pickup-comments.component');
 var activity_1 = require('../activity/activity');
@@ -23,12 +23,12 @@ var PickupComponent = (function () {
     }
     PickupComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var name = this.routeParams.get('name');
+        var name = this.routeParams.getParam('name');
         this.activityService.getActivity(name).subscribe(function (activity) { return _this.activity = activity; });
     };
     PickupComponent.prototype.onDeleteActivity = function (activity) {
         this.activityService.deleteActivity(activity);
-        this.router.navigate(['Dashboard']);
+        this.router.navigate(['/dashboard']);
     };
     __decorate([
         core_1.Output(), 
@@ -43,13 +43,13 @@ var PickupComponent = (function () {
                 activity_service_1.ActivityService
             ],
             directives: [
-                router_deprecated_1.ROUTER_DIRECTIVES,
+                router_1.ROUTER_DIRECTIVES,
                 pickup_events_component_1.PickupEventsComponent,
                 pickup_comments_component_1.PickupCommentsComponent,
                 bootstrap_datetimepicker_component_1.BootstrapDateTimePickerComponent
             ]
         }), 
-        __metadata('design:paramtypes', [activity_service_1.ActivityService, router_deprecated_1.Router, router_deprecated_1.RouteParams])
+        __metadata('design:paramtypes', [activity_service_1.ActivityService, router_1.Router, router_1.RouteSegment])
     ], PickupComponent);
     return PickupComponent;
 }());

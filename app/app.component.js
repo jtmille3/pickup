@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
 var pickup_component_1 = require('./pickup/pickup.component');
 var AppComponent = (function () {
@@ -21,20 +21,11 @@ var AppComponent = (function () {
             selector: 'app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES]
         }),
-        router_deprecated_1.RouteConfig([
-            {
-                path: '/dashboard',
-                name: 'Dashboard',
-                component: dashboard_component_1.DashboardComponent,
-                useAsDefault: true
-            },
-            {
-                path: '/pickup/:name',
-                name: 'Pickup',
-                component: pickup_component_1.PickupComponent
-            }
+        router_1.Routes([
+            { path: '/dashboard', component: dashboard_component_1.DashboardComponent },
+            { path: '/pickup/:name', component: pickup_component_1.PickupComponent }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
