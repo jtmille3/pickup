@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var pickup_events_component_1 = require('./pickup-events.component');
 var pickup_comments_component_1 = require('./pickup-comments.component');
+var event_dialog_component_1 = require('../event/event-dialog.component');
 var activity_1 = require('../activity/activity');
 var activity_service_1 = require('../activity/activity.service');
 var bootstrap_datetimepicker_component_1 = require('../components/bootstrap-datetimepicker.component');
@@ -31,7 +32,9 @@ var PickupComponent = (function () {
         this.activityService.deleteActivity(activity).subscribe(function () {
             _this.router.navigate(['/']);
         });
-        return false; // return false because inside a form
+    };
+    PickupComponent.prototype.onAddEvent = function (activity) {
+        event_dialog_component_1.EventDialogComponent.show(activity);
     };
     __decorate([
         core_1.Output(), 
@@ -49,7 +52,8 @@ var PickupComponent = (function () {
                 router_1.ROUTER_DIRECTIVES,
                 pickup_events_component_1.PickupEventsComponent,
                 pickup_comments_component_1.PickupCommentsComponent,
-                bootstrap_datetimepicker_component_1.BootstrapDateTimePickerComponent
+                bootstrap_datetimepicker_component_1.BootstrapDateTimePickerComponent,
+                event_dialog_component_1.EventDialogComponent
             ]
         }), 
         __metadata('design:paramtypes', [activity_service_1.ActivityService, router_1.Router, router_1.RouteSegment])

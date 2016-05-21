@@ -5,6 +5,8 @@ import { Router, RouteSegment, ROUTER_DIRECTIVES } from '@angular/router';
 import { PickupEventsComponent } from './pickup-events.component';
 import { PickupCommentsComponent } from './pickup-comments.component';
 
+import { EventDialogComponent } from '../event/event-dialog.component';
+
 import { Activity } from '../activity/activity';
 import { ActivityService } from '../activity/activity.service';
 
@@ -21,7 +23,8 @@ import { BootstrapDateTimePickerComponent } from '../components/bootstrap-dateti
     ROUTER_DIRECTIVES,
     PickupEventsComponent,
     PickupCommentsComponent,
-    BootstrapDateTimePickerComponent
+    BootstrapDateTimePickerComponent,
+    EventDialogComponent
   ]
 })
 export class PickupComponent implements OnInit {
@@ -42,7 +45,9 @@ export class PickupComponent implements OnInit {
     this.activityService.deleteActivity(activity).subscribe(() => {
       this.router.navigate(['/']);
     });
+  }
 
-    return false; // return false because inside a form
+  onAddEvent(activity:Activity) {
+    EventDialogComponent.show(activity);
   }
 }

@@ -5,7 +5,8 @@
         <div class="form-group">
           <div class="name">{{activity.name}}</div>
         </div>
-        <button class="btn btn-danger pull-right" (click)="onDeleteActivity(activity)"><i class="glyphicon glyphicon-trash"></i> Delete</button>
+        <button type="submit" class="btn btn-danger pull-right" (click)="onDeleteActivity(activity)"><i class="glyphicon glyphicon-trash"></i> Delete</button>
+        <button type="submit" class="btn btn-primary pull-right" (click)="onAddEvent(activity)"><i class="glyphicon glyphicon-plus"></i> Event</button>
       </form>
     </div>
   </div>
@@ -23,3 +24,4 @@
     </div>
   </div>
 </div>
+<event-dialog></event-dialog>
