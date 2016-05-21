@@ -11,7 +11,7 @@ import {PickupComponent } from './pickup/pickup.component';
   directives: [ROUTER_DIRECTIVES]
 })
 @Routes([
-  { path: '/dashboard', component: DashboardComponent },
+  { path: '/', component: DashboardComponent },
   { path: '/pickup/:name', component: PickupComponent }
 ])
 export class AppComponent {

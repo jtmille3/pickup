@@ -29,7 +29,7 @@ var PickupComponent = (function () {
     PickupComponent.prototype.onDeleteActivity = function (activity) {
         var _this = this;
         this.activityService.deleteActivity(activity).subscribe(function () {
-            _this.router.navigate(['dashboard']);
+            _this.router.navigate(['/']);
         });
         return false; // return false because inside a form
     };

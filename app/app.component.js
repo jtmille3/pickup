@@ -24,7 +24,7 @@ var AppComponent = (function () {
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.Routes([
-            { path: '/dashboard', component: dashboard_component_1.DashboardComponent },
+            { path: '/', component: dashboard_component_1.DashboardComponent },
             { path: '/pickup/:name', component: pickup_component_1.PickupComponent }
         ]), 
         __metadata('design:paramtypes', [])
