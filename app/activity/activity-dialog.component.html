@@ -1,4 +1,4 @@
-<div id="activity-model" class="modal" tabindex="-1" role="dialog">
+<div id="activity-modal" class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,7 +9,7 @@
         <form>
           <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" [(ngModel)]="name"/>
+            <input type="text" class="name form-control" [(ngModel)]="name" (keydown.enter)="onAddActivity()"/>
           </div>
         </form>
       </div>

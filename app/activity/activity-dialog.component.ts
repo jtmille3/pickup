@@ -36,10 +36,13 @@ export class ActivityDialogComponent implements OnInit {
 
     this.activityService.addActivity(activity);
 
-    $('#activity-model').modal('hide');
+    $('#activity-modal').modal('hide');
+
+    this.name = '';
   }
 
   public static show():void {
-    $('#activity-model').modal('show');
+    $('#activity-modal').modal('show');
+    $('#activity-modal .name').focus();
   }
 }

@@ -24,10 +24,12 @@ var ActivityDialogComponent = (function () {
         var activity = new activity_1.Activity();
         activity.name = this.name;
         this.activityService.addActivity(activity);
-        $('#activity-model').modal('hide');
+        $('#activity-modal').modal('hide');
+        this.name = '';
     };
     ActivityDialogComponent.show = function () {
-        $('#activity-model').modal('show');
+        $('#activity-modal').modal('show');
+        $('#activity-modal .name').focus();
     };
     ActivityDialogComponent = __decorate([
         core_1.Component({
