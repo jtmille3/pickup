@@ -39,7 +39,10 @@ export class PickupComponent implements OnInit {
   }
 
   onDeleteActivity(activity:Activity) {
-    this.activityService.deleteActivity(activity);
-    this.router.navigate(['/dashboard']);
+    this.activityService.deleteActivity(activity).subscribe(() => {
+      this.router.navigate(['dashboard']);
+    });
+
+    return false; // return false because inside a form
   }
 }

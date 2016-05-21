@@ -27,8 +27,11 @@ var PickupComponent = (function () {
         this.activityService.getActivity(name).subscribe(function (activity) { return _this.activity = activity; });
     };
     PickupComponent.prototype.onDeleteActivity = function (activity) {
-        this.activityService.deleteActivity(activity);
-        this.router.navigate(['/dashboard']);
+        var _this = this;
+        this.activityService.deleteActivity(activity).subscribe(function () {
+            _this.router.navigate(['dashboard']);
+        });
+        return false; // return false because inside a form
     };
     __decorate([
         core_1.Output(), 

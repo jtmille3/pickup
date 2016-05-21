@@ -61,6 +61,7 @@ var ActivityService = (function () {
     ActivityService.prototype.deleteActivity = function (activity) {
         ACTIVITIES = _.filter(ACTIVITIES, function (_activity) { return _activity.name !== activity.name; });
         return Observable_1.Observable.create(function (observer) {
+            observer.next();
             observer.complete();
         });
     };

@@ -58,6 +58,7 @@ export class ActivityService {
   deleteActivity(activity:Activity) {
     ACTIVITIES = _.filter(ACTIVITIES, _activity => _activity.name !== activity.name);
     return Observable.create(observer => {
+      observer.next();
       observer.complete();
     });
   }
