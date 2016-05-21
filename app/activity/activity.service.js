@@ -51,15 +51,15 @@ var ActivityService = (function () {
         });
     };
     ActivityService.prototype.updateActivity = function (activity) {
-        var index = _.findIndex(ACTIVITIES, function (_activity) { return _activity.id === activity.id; });
+        var index = _.findIndex(ACTIVITIES, function (_activity) { return _activity.id === activity.activityId; });
         ACTIVITIES[index] = activity;
         return Observable_1.Observable.create(function (observer) {
             observer.next(activity);
             observer.complete();
         });
     };
-    ActivityService.prototype.deleteActivity = function (name) {
-        ACTIVITIES = _.filter(ACTIVITIES, function (_activity) { return _activity.name !== name; });
+    ActivityService.prototype.deleteActivity = function (activity) {
+        ACTIVITIES = _.filter(ACTIVITIES, function (_activity) { return _activity.name !== activity.name; });
         return Observable_1.Observable.create(function (observer) {
             observer.complete();
         });

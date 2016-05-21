@@ -16,14 +16,19 @@ var activity_1 = require('../activity/activity');
 var activity_service_1 = require('../activity/activity.service');
 var bootstrap_datetimepicker_component_1 = require('../components/bootstrap-datetimepicker.component');
 var PickupComponent = (function () {
-    function PickupComponent(activityService, routeParams) {
+    function PickupComponent(activityService, router, routeParams) {
         this.activityService = activityService;
+        this.router = router;
         this.routeParams = routeParams;
     }
     PickupComponent.prototype.ngOnInit = function () {
         var _this = this;
         var name = this.routeParams.get('name');
         this.activityService.getActivity(name).subscribe(function (activity) { return _this.activity = activity; });
+    };
+    PickupComponent.prototype.onDeleteActivity = function (activity) {
+        this.activityService.deleteActivity(activity);
+        this.router.navigate(['Dashboard']);
     };
     __decorate([
         core_1.Output(), 
@@ -44,7 +49,7 @@ var PickupComponent = (function () {
                 bootstrap_datetimepicker_component_1.BootstrapDateTimePickerComponent
             ]
         }), 
-        __metadata('design:paramtypes', [activity_service_1.ActivityService, router_deprecated_1.RouteParams])
+        __metadata('design:paramtypes', [activity_service_1.ActivityService, router_deprecated_1.Router, router_deprecated_1.RouteParams])
     ], PickupComponent);
     return PickupComponent;
 }());

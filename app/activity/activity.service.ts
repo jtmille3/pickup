@@ -47,7 +47,7 @@ export class ActivityService {
   }
 
   updateActivity(activity:Activity) {
-    var index:number = _.findIndex(ACTIVITIES, _activity => _activity.id === activity.id);
+    var index:number = _.findIndex(ACTIVITIES, _activity => _activity.id === activity.activityId);
     ACTIVITIES[index] = activity;
     return Observable.create(observer => {
       observer.next(activity);
@@ -55,8 +55,8 @@ export class ActivityService {
     });
   }
 
-  deleteActivity(name:string) {
-    ACTIVITIES = _.filter(ACTIVITIES, _activity => _activity.name !== name);
+  deleteActivity(activity:Activity) {
+    ACTIVITIES = _.filter(ACTIVITIES, _activity => _activity.name !== activity.name);
     return Observable.create(observer => {
       observer.complete();
     });

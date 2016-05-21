@@ -4,11 +4,10 @@
 }
 
 .event .control-label {
-  font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
   margin: 0px 5px;
 }
 
 button {
-  min-width: 100px;
+  min-width: 70px;
 }

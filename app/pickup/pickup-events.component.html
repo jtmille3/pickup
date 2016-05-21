@@ -1,9 +1,9 @@
 <div *ngFor="let event of events" class="event">
   <form class="form-inline">
     <div class="form-group">
-      <button *ngIf="event.participants.indexOf(USER_ID) === -1" class="btn btn-success" (click)="onAddMe(event)"><i class="glyphicon glyphicon-thumbs-up"></i> I'm in!</button>
-      <button *ngIf="event.participants.indexOf(USER_ID) !== -1" class="btn btn-danger" (click)="onRemoveMe(event)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button>
-      <span class="control-label">{{event.space.name}} @ {{event.time.name}} - {{event.participants.length}} Active</span>
+      <button *ngIf="event.participants.indexOf(USER_ID) === -1" class="btn btn-xs btn-success" (click)="onAddMe(event)"><i class="glyphicon glyphicon-thumbs-up"></i> I'm in!</button>
+      <button *ngIf="event.participants.indexOf(USER_ID) !== -1" class="btn btn-xs btn-danger" (click)="onRemoveMe(event)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button>
+      <span class="control-label">{{event.space.name}} @ {{event.time.name}} - {{event.participants.length}} Signup(s)</span>
     </div>
   </form>
   <pickup-participants [participants]="event.participants"></pickup-participants>

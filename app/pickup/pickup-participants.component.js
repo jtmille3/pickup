@@ -17,9 +17,7 @@ var PickupParticipantsComponent = (function () {
     function PickupParticipantsComponent(USER_ID) {
         this.USER_ID = USER_ID;
     }
-    PickupParticipantsComponent.prototype.ngOnInit = function () {
-        console.log('Participants', this.participants);
-    };
+    PickupParticipantsComponent.prototype.ngOnInit = function () { };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)

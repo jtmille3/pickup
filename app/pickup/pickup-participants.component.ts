@@ -13,7 +13,5 @@ export class PickupParticipantsComponent implements OnInit {
 
   constructor(@Inject('USER_ID') private USER_ID:Participant) {}
 
-  ngOnInit() {
-    console.log('Participants', this.participants);
-  }
+  ngOnInit() {}
 }
