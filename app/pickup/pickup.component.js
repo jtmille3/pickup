@@ -32,6 +32,7 @@ var PickupComponent = (function () {
         this.activityService.deleteActivity(activity).subscribe(function () {
             _this.router.navigate(['/']);
         });
+        return false;
     };
     PickupComponent.prototype.onAddEvent = function (activity) {
         event_dialog_component_1.EventDialogComponent.show(activity);

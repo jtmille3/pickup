@@ -1,5 +1,6 @@
 import { Component, Input, Output, OnInit, Inject } from '@angular/core';
 
+import { Activity } from '../activity/activity';
 import { Event } from '../event/event';
 import { Participant } from '../participant/participant';
 
@@ -15,7 +16,7 @@ import { PickupParticipantsComponent } from './pickup-participants.component';
 })
 export class PickupEventsComponent implements OnInit {
 
-  @Input() events: Event[];
+  @Input() activity: Activity;
 
   constructor(@Inject('USER_ID') private USER_ID:Participant) {}
 
@@ -27,9 +28,19 @@ export class PickupEventsComponent implements OnInit {
     }
 
     event.participants.push(this.USER_ID);
+
+    return false;
   }
 
   onRemoveMe(event:Event) {
     event.participants = _.without(event.participants, this.USER_ID);
+
+    return false;
+  }
+
+  onRemoveEvent(event:Event) {
+    this.activity.events = _.without(this.activity.events, event);
+
+    return false;
   }
 }

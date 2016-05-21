@@ -8,6 +8,6 @@
   margin: 0px 5px;
 }
 
-button {
+button.btn-xs {
   min-width: 70px;
 }

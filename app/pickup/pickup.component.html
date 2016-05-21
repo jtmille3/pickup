@@ -1,18 +1,14 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
       <form class="form-inline">
+        <button class="btn btn-danger glyphicon glyphicon-trash" (click)="onDeleteActivity(activity)" title="Delete activity"></button>
         <div class="form-group">
           <div class="name">{{activity.name}}</div>
         </div>
-        <button type="submit" class="btn btn-danger pull-right" (click)="onDeleteActivity(activity)"><i class="glyphicon glyphicon-trash"></i> Delete</button>
-        <button type="submit" class="btn btn-primary pull-right" (click)="onAddEvent(activity)"><i class="glyphicon glyphicon-plus"></i> Event</button>
+        <button class="btn btn-primary pull-right" (click)="onAddEvent(activity)"><i class="glyphicon glyphicon-plus"></i> Event</button>
       </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8">
-      <pickup-events [events]="activity.events"></pickup-events>
+      <pickup-events [activity]="activity"></pickup-events>
     </div>
     <div class="col-md-4">
       <div class="well">

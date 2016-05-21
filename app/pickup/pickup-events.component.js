@@ -12,6 +12,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
+var activity_1 = require('../activity/activity');
 var participant_1 = require('../participant/participant');
 var pickup_participants_component_1 = require('./pickup-participants.component');
 var PickupEventsComponent = (function () {
@@ -24,14 +25,20 @@ var PickupEventsComponent = (function () {
             return;
         }
         event.participants.push(this.USER_ID);
+        return false;
     };
     PickupEventsComponent.prototype.onRemoveMe = function (event) {
         event.participants = _.without(event.participants, this.USER_ID);
+        return false;
+    };
+    PickupEventsComponent.prototype.onRemoveEvent = function (event) {
+        this.activity.events = _.without(this.activity.events, event);
+        return false;
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Array)
-    ], PickupEventsComponent.prototype, "events", void 0);
+        __metadata('design:type', activity_1.Activity)
+    ], PickupEventsComponent.prototype, "activity", void 0);
     PickupEventsComponent = __decorate([
         core_1.Component({
             selector: 'pickup-events',

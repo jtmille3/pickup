@@ -16,7 +16,7 @@
         {{comment.text}}
       </td>
       <td>
-        <button *ngIf="comment.participantId === USER_ID.participantId" class="btn btn-danger" (click)="onDelete(comment)"><i class=" glyphicon glyphicon-trash"></i></button>
+        <button *ngIf="comment.participantId === USER_ID.participantId" class="btn btn-danger" (click)="onDelete(comment)" title="Delete comment"><i class=" glyphicon glyphicon-trash"></i></button>
       </td>
     </tr>
   </table>

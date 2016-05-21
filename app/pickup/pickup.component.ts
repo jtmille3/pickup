@@ -45,6 +45,8 @@ export class PickupComponent implements OnInit {
     this.activityService.deleteActivity(activity).subscribe(() => {
       this.router.navigate(['/']);
     });
+
+    return false;
   }
 
   onAddEvent(activity:Activity) {
