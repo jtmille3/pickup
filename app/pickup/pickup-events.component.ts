@@ -1,7 +1,7 @@
 import { Component, Input, Output, OnInit, Inject } from '@angular/core';
 
-import { Event } from '../event';
-import { Participant } from '../participant';
+import { Event } from '../event/event';
+import { Participant } from '../participant/participant';
 
 import { PickupParticipantsComponent } from './pickup-participants.component';
 

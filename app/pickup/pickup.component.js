@@ -12,8 +12,8 @@ var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var pickup_events_component_1 = require('./pickup-events.component');
 var pickup_comments_component_1 = require('./pickup-comments.component');
-var activity_1 = require('../activity');
-var activity_service_1 = require('../activity.service');
+var activity_1 = require('../activity/activity');
+var activity_service_1 = require('../activity/activity.service');
 var bootstrap_datetimepicker_component_1 = require('../components/bootstrap-datetimepicker.component');
 var PickupComponent = (function () {
     function PickupComponent(activityService, routeParams) {

@@ -7,11 +7,12 @@ import { ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 import { provide } from '@angular/core';
 
-import { Participant } from './participant';
+import { Participant } from './participant/participant';
 
-var me = new Participant();
-me.participantId = 'jemill';
-me.name = 'Jeff Miller';
+var me:Participant = {
+  participantId: 'jemill',
+  name: 'Jeff Miller'
+}
 
 bootstrap(AppComponent, [
   HTTP_PROVIDERS,

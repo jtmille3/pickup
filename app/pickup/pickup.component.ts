@@ -5,8 +5,8 @@ import { RouteParams, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { PickupEventsComponent } from './pickup-events.component';
 import { PickupCommentsComponent } from './pickup-comments.component';
 
-import { Activity } from '../activity';
-import { ActivityService } from '../activity.service';
+import { Activity } from '../activity/activity';
+import { ActivityService } from '../activity/activity.service';
 
 import { BootstrapDateTimePickerComponent } from '../components/bootstrap-datetimepicker.component';
 

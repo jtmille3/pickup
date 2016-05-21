@@ -12,7 +12,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
-var comment_1 = require('../comment');
+var comment_1 = require('../comment/comment');
 var PickupCommentsComponent = (function () {
     function PickupCommentsComponent(USER_ID) {
         this.USER_ID = USER_ID;

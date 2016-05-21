@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var activity_service_1 = require('../activity.service');
-var activity_1 = require('../activity');
+var activity_service_1 = require('./activity.service');
+var activity_1 = require('./activity');
 var ActivityDialogComponent = (function () {
     function ActivityDialogComponent(activityService) {
         this.activityService = activityService;
@@ -24,17 +24,16 @@ var ActivityDialogComponent = (function () {
         var activity = new activity_1.Activity();
         activity.name = this.name;
         this.activityService.addActivity(activity);
-        $('#activity-model').modal('toggle');
+        $('#activity-model').modal('hide');
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], ActivityDialogComponent.prototype, "toggle", void 0);
+    ActivityDialogComponent.show = function () {
+        $('#activity-model').modal('show');
+    };
     ActivityDialogComponent = __decorate([
         core_1.Component({
             selector: 'activity-dialog',
-            templateUrl: 'app/dashboard/activity-dialog.component.html',
-            styleUrls: ['app/dashboard/activity-dialog.component.css'],
+            templateUrl: 'app/activity/activity-dialog.component.html',
+            styleUrls: ['app/activity/activity-dialog.component.css'],
             providers: [
                 activity_service_1.ActivityService
             ],

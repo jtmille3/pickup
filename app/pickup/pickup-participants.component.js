@@ -12,7 +12,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
-var participant_1 = require('../participant');
+var participant_1 = require('../participant/participant');
 var PickupParticipantsComponent = (function () {
     function PickupParticipantsComponent(USER_ID) {
         this.USER_ID = USER_ID;

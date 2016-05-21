@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var activity_dialog_component_1 = require('./activity-dialog.component');
-var activity_service_1 = require('../activity.service');
+var activity_dialog_component_1 = require('../activity/activity-dialog.component');
+var activity_service_1 = require('../activity/activity.service');
 var DashboardComponent = (function () {
     function DashboardComponent(activityService) {
         this.activityService = activityService;
@@ -26,7 +26,7 @@ var DashboardComponent = (function () {
         });
     };
     DashboardComponent.prototype.onAddActivity = function () {
-        this.toggle = true;
+        activity_dialog_component_1.ActivityDialogComponent.show();
     };
     DashboardComponent = __decorate([
         core_1.Component({

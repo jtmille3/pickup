@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Inject } from '@angular/core';
 
-import { Comment } from '../comment';
+import { Comment } from '../comment/comment';
 
 declare var _;
 

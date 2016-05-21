@@ -3,8 +3,8 @@ import { Observable } from 'rxjs/Observable';
 
 import {Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@angular/http';
 
-import { Activity } from './activity';
-import { Space } from './space';
+import { Activity } from '../activity/activity';
+import { Space } from '../space/space';
 
 declare var _;
 

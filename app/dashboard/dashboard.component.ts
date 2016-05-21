@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
-import { ActivityDialogComponent } from './activity-dialog.component';
+import { ActivityDialogComponent } from '../activity/activity-dialog.component';
 
-import { ActivityService } from '../activity.service';
-import { Activity } from '../activity';
+import { ActivityService } from '../activity/activity.service';
+import { Activity } from '../activity/activity';
 
 declare var $;
 
@@ -37,6 +37,6 @@ export class DashboardComponent implements OnInit {
   }
 
   onAddActivity() {
-    this.toggle = true
+    ActivityDialogComponent.show();
   }
 }

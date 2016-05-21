@@ -2,15 +2,15 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
-import { ActivityService } from '../activity.service';
-import { Activity } from '../activity';
+import { ActivityService } from './activity.service';
+import { Activity } from './activity';
 
 declare var $;
 
 @Component({
   selector: 'activity-dialog',
-  templateUrl: 'app/dashboard/activity-dialog.component.html',
-  styleUrls: ['app/dashboard/activity-dialog.component.css'],
+  templateUrl: 'app/activity/activity-dialog.component.html',
+  styleUrls: ['app/activity/activity-dialog.component.css'],
   providers: [
     ActivityService
   ],
@@ -19,8 +19,6 @@ declare var $;
   ]
 })
 export class ActivityDialogComponent implements OnInit {
-
-  @Input() toggle:boolean;
 
   name:string;
 
@@ -38,6 +36,10 @@ export class ActivityDialogComponent implements OnInit {
 
     this.activityService.addActivity(activity);
 
-    $('#activity-model').modal('toggle');
+    $('#activity-model').modal('hide');
+  }
+
+  public static show():void {
+    $('#activity-model').modal('show');
   }
 }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Inject } from '@angular/core';
 
-import { Participant } from '../participant';
+import { Participant } from '../participant/participant';
 
 @Component({
   selector: 'pickup-participants',
