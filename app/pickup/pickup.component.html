@@ -6,7 +6,7 @@
         <div class="form-group">
           <div class="name">{{activity.name}}</div>
         </div>
-        <button class="btn btn-primary pull-right" (click)="onAddEvent(activity)"><i class="glyphicon glyphicon-plus"></i> Event</button>
+        <a class="add-event" (click)="onAddEvent(activity)" title="Add event"><i class="glyphicon glyphicon-plus"></i></a>
       </form>
       <pickup-events [activity]="activity"></pickup-events>
     </div>
