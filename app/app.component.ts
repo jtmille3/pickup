@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
 
-import {DashboardComponent } from './dashboard/dashboard.component';
-import {PickupComponent } from './pickup/pickup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PickupComponent } from './pickup/pickup.component';
+
+import { EditService } from './edit.service';
 
 @Component({
   selector: 'app',
@@ -17,7 +19,12 @@ import {PickupComponent } from './pickup/pickup.component';
 export class AppComponent {
   year:number;
 
-  constructor() {
+  constructor(private editService:EditService) {
     this.year = new Date().getFullYear();
+  }
+
+  onToggleEdit() {
+    this.editService.toggle();
+    return false;
   }
 }

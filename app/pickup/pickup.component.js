@@ -15,10 +15,12 @@ var pickup_comments_component_1 = require('./pickup-comments.component');
 var event_dialog_component_1 = require('../event/event-dialog.component');
 var activity_1 = require('../activity/activity');
 var activity_service_1 = require('../activity/activity.service');
+var edit_service_1 = require('../edit.service');
 var bootstrap_datetimepicker_component_1 = require('../components/bootstrap-datetimepicker.component');
 var PickupComponent = (function () {
-    function PickupComponent(activityService, router, routeParams) {
+    function PickupComponent(activityService, editService, router, routeParams) {
         this.activityService = activityService;
+        this.editService = editService;
         this.router = router;
         this.routeParams = routeParams;
     }
@@ -57,7 +59,7 @@ var PickupComponent = (function () {
                 event_dialog_component_1.EventDialogComponent
             ]
         }), 
-        __metadata('design:paramtypes', [activity_service_1.ActivityService, router_1.Router, router_1.RouteSegment])
+        __metadata('design:paramtypes', [activity_service_1.ActivityService, edit_service_1.EditService, router_1.Router, router_1.RouteSegment])
     ], PickupComponent);
     return PickupComponent;
 }());

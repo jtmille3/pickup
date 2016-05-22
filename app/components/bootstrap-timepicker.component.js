@@ -23,7 +23,7 @@ var BootstrapTimePickerComponent = (function () {
             format: 'HH:mm'
         });
         $element.on('dp.change', function () {
-            _this.timeChange.emit($element.data("DateTimePicker").date().format('HH:mm'));
+            _this.timeChange.emit($element.data('DateTimePicker').date().format('HH:mm'));
         });
     };
     Object.defineProperty(BootstrapTimePickerComponent.prototype, "time", {

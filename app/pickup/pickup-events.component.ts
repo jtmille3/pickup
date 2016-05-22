@@ -6,6 +6,8 @@ import { Participant } from '../participant/participant';
 
 import { PickupParticipantsComponent } from './pickup-participants.component';
 
+import { EditService } from '../edit.service';
+
 @Component({
   selector: 'pickup-events',
   templateUrl: 'app/pickup/pickup-events.component.html',
@@ -18,7 +20,10 @@ export class PickupEventsComponent implements OnInit {
 
   @Input() activity: Activity;
 
-  constructor(@Inject('USER_ID') private USER_ID:Participant) {}
+  constructor(
+    @Inject('USER_ID') private USER_ID:Participant,
+    private editService:EditService
+  ) {}
 
   ngOnInit() {}
 

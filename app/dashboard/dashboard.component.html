@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12 dashboard">
-      <a class="add-activity" (click)="onAddActivity()" title="Add activity"><i class="glyphicon glyphicon-plus"></i></a>
+      <a *ngIf="editService.edit" class="add-activity" (click)="onAddActivity()" title="Add activity"><i class="glyphicon glyphicon-plus"></i></a>
       <a class="activity-tile" *ngFor="let activity of activities" [routerLink]="['/pickup', activity.name]">
         <svg height="150" width="150">
           <circle cx="75" cy="75" r="75" fill="#222" />

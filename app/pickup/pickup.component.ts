@@ -10,6 +10,8 @@ import { EventDialogComponent } from '../event/event-dialog.component';
 import { Activity } from '../activity/activity';
 import { ActivityService } from '../activity/activity.service';
 
+import { EditService } from '../edit.service';
+
 import { BootstrapDateTimePickerComponent } from '../components/bootstrap-datetimepicker.component';
 
 @Component({
@@ -33,6 +35,7 @@ export class PickupComponent implements OnInit {
 
   constructor(
     private activityService:ActivityService,
+    private editService:EditService,
     private router: Router,
     private routeParams: RouteSegment) {}
 

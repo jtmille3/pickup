@@ -12,10 +12,16 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
 var pickup_component_1 = require('./pickup/pickup.component');
+var edit_service_1 = require('./edit.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(editService) {
+        this.editService = editService;
         this.year = new Date().getFullYear();
     }
+    AppComponent.prototype.onToggleEdit = function () {
+        this.editService.toggle();
+        return false;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
@@ -27,7 +33,7 @@ var AppComponent = (function () {
             { path: '/', component: dashboard_component_1.DashboardComponent },
             { path: '/pickup/:name', component: pickup_component_1.PickupComponent }
         ]), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [edit_service_1.EditService])
     ], AppComponent);
     return AppComponent;
 }());

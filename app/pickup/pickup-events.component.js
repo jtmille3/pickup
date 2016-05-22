@@ -15,9 +15,11 @@ var core_1 = require('@angular/core');
 var activity_1 = require('../activity/activity');
 var participant_1 = require('../participant/participant');
 var pickup_participants_component_1 = require('./pickup-participants.component');
+var edit_service_1 = require('../edit.service');
 var PickupEventsComponent = (function () {
-    function PickupEventsComponent(USER_ID) {
+    function PickupEventsComponent(USER_ID, editService) {
         this.USER_ID = USER_ID;
+        this.editService = editService;
     }
     PickupEventsComponent.prototype.ngOnInit = function () { };
     PickupEventsComponent.prototype.onAddMe = function (event) {
@@ -49,7 +51,7 @@ var PickupEventsComponent = (function () {
             ]
         }),
         __param(0, core_1.Inject('USER_ID')), 
-        __metadata('design:paramtypes', [participant_1.Participant])
+        __metadata('design:paramtypes', [participant_1.Participant, edit_service_1.EditService])
     ], PickupEventsComponent);
     return PickupEventsComponent;
 }());

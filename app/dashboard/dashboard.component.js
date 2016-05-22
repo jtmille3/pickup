@@ -12,9 +12,11 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var activity_dialog_component_1 = require('../activity/activity-dialog.component');
 var activity_service_1 = require('../activity/activity.service');
+var edit_service_1 = require('../edit.service');
 var DashboardComponent = (function () {
-    function DashboardComponent(activityService) {
+    function DashboardComponent(activityService, editService) {
         this.activityService = activityService;
+        this.editService = editService;
         this.activities = [];
         this.toggle = false;
     }
@@ -41,7 +43,7 @@ var DashboardComponent = (function () {
                 activity_dialog_component_1.ActivityDialogComponent
             ]
         }), 
-        __metadata('design:paramtypes', [activity_service_1.ActivityService])
+        __metadata('design:paramtypes', [activity_service_1.ActivityService, edit_service_1.EditService])
     ], DashboardComponent);
     return DashboardComponent;
 }());

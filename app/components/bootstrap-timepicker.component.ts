@@ -21,7 +21,7 @@ export class BootstrapTimePickerComponent implements OnInit {
     });
 
     $element.on('dp.change', () => {
-      this.timeChange.emit($element.data("DateTimePicker").date().format('HH:mm'));
+      this.timeChange.emit($element.data('DateTimePicker').date().format('HH:mm'));
     });
   }
 

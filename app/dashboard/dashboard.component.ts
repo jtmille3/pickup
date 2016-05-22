@@ -7,6 +7,8 @@ import { ActivityDialogComponent } from '../activity/activity-dialog.component';
 import { ActivityService } from '../activity/activity.service';
 import { Activity } from '../activity/activity';
 
+import { EditService } from '../edit.service';
+
 declare var $;
 
 @Component({
@@ -27,7 +29,10 @@ export class DashboardComponent implements OnInit {
 
   toggle:boolean = false;
 
-  constructor(private activityService:ActivityService) {}
+  constructor(
+    private activityService:ActivityService,
+    private editService:EditService
+  ) {}
 
   ngOnInit() {
     // Load sports/activities
