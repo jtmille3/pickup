@@ -26,11 +26,12 @@ export class PickupCommentsComponent implements OnInit {
     }
 
     // move this into a comment service...
-    var comment:Comment = new Comment();
-    comment.commentId = -1;
-    comment.participantId = this.USER_ID.participantId;
-    comment.text = this.comment;
-    comment.timestamp = new Date();
+    var comment:Comment = {
+      commentId: -1,
+      participantId: this.USER_ID.participantId,
+      text: this.comment,
+      timestamp: new Date()
+    };
 
     this.comments.push(comment);
 

@@ -16,6 +16,10 @@ td {
   padding: 0px 8px;
 }
 
+td:nth-child(1), td:nth-child(3) {
+  width:1px;
+}
+
 img {
   width: 53px;
   height: 66px;

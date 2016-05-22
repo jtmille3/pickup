@@ -1,7 +1,9 @@
 <div class="well">
   <form class="form-inline">
-    <input type="text" class="form-control" [(ngModel)]="comment" (key.enter)="onSubmit()"/>
-    <button class="btn btn-primary" (click)="onSubmit()">Comment</button>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="comment" (key.enter)="onSubmit()"/>
+      <button class="btn btn-primary" (click)="onSubmit()">Comment</button>
+    </div>
   </form>
 </div>
 <div *ngIf="comments.length" class="well">
@@ -11,12 +13,12 @@
         <img src="app/img/unknown.jpeg" />
       </td>
       <td>
-        <a href="http://sww.sas.com/sww/tools/phonelist/?keyword={{comment.participantId}}">{{comment.participantId}}</a> {{comment.timestamp | date:'MMMM d yyyy, h:mm:ss a'}}
+        <a href="http://sww.sas.com/sww/tools/phonelist/?keyword={{comment.participantId}}">{{comment.participantId}}</a> @ {{comment.timestamp | date:'h:mm:ss a'}}
         <br/>
         {{comment.text}}
       </td>
       <td>
-        <button *ngIf="comment.participantId === USER_ID.participantId" class="btn btn-danger" (click)="onDelete(comment)" title="Delete comment"><i class=" glyphicon glyphicon-trash"></i></button>
+        <button *ngIf="comment.participantId === USER_ID.participantId" class="btn btn-danger glyphicon glyphicon-trash delete" (click)="onDelete(comment)" title="Delete comment"></button>
       </td>
     </tr>
   </table>

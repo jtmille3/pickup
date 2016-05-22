@@ -12,7 +12,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
-var comment_1 = require('../comment/comment');
 var PickupCommentsComponent = (function () {
     function PickupCommentsComponent(USER_ID) {
         this.USER_ID = USER_ID;
@@ -23,11 +22,12 @@ var PickupCommentsComponent = (function () {
             return;
         }
         // move this into a comment service...
-        var comment = new comment_1.Comment();
-        comment.commentId = -1;
-        comment.participantId = this.USER_ID.participantId;
-        comment.text = this.comment;
-        comment.timestamp = new Date();
+        var comment = {
+            commentId: -1,
+            participantId: this.USER_ID.participantId,
+            text: this.comment,
+            timestamp: new Date()
+        };
         this.comments.push(comment);
         this.comment = '';
     };
