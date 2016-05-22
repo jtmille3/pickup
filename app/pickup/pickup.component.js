@@ -42,6 +42,9 @@ var PickupComponent = (function () {
     PickupComponent.prototype.onAddEvent = function (activity) {
         event_dialog_component_1.EventDialogComponent.show(activity);
     };
+    PickupComponent.prototype.onDateChange = function (date) {
+        this.router.navigate(['/pickup', this.name, date]);
+    };
     __decorate([
         core_1.Output(), 
         __metadata('design:type', activity_1.Activity)

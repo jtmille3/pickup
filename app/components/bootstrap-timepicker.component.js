@@ -13,6 +13,7 @@ var BootstrapTimePickerComponent = (function () {
     function BootstrapTimePickerComponent(element) {
         this.element = element;
         this.timeChange = new core_1.EventEmitter(); // an event emitter
+        this.change = new core_1.EventEmitter(); // an event emitter
     }
     BootstrapTimePickerComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -22,34 +23,40 @@ var BootstrapTimePickerComponent = (function () {
             sideBySide: true,
             format: 'HH:mm'
         });
-        $element.on('dp.change', function () {
-            _this.timeChange.emit($element.data('DateTimePicker').date().format('HH:mm'));
+        $element.data('DateTimePicker').date(moment(this.time).format('HH:mm'));
+        $element.on('dp.change', function (e) {
+            _this.time = e.date.format('HH:mm');
+            _this.timeChange.emit(_this.time);
+            _this.change.emit(_this.time);
         });
     };
-    Object.defineProperty(BootstrapTimePickerComponent.prototype, "time", {
-        set: function (time) {
-            var $element = $(this.element.nativeElement);
-            if ($element.data('DateTimePicker')) {
-                if (!time) {
-                    $element.data('DateTimePicker').date(new Date());
-                }
-                else {
-                    $element.data('DateTimePicker').date(time);
-                }
+    BootstrapTimePickerComponent.prototype.ngOnChanges = function () {
+        var $element = $(this.element.nativeElement);
+        if ($element.data('DateTimePicker')) {
+            if (!this.time) {
+                this.time = moment().format('HH:mm');
+                $element.data('DateTimePicker').date(this.time);
             }
-        },
-        enumerable: true,
-        configurable: true
-    });
+            else {
+                $element.data('DateTimePicker').date(this.time);
+            }
+        }
+        this.timeChange.emit(this.time);
+        this.change.emit(this.time);
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], BootstrapTimePickerComponent.prototype, "time", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], BootstrapTimePickerComponent.prototype, "timeChange", void 0);
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String), 
-        __metadata('design:paramtypes', [String])
-    ], BootstrapTimePickerComponent.prototype, "time", null);
+        // an event emitter
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], BootstrapTimePickerComponent.prototype, "change", void 0);
     BootstrapTimePickerComponent = __decorate([
         core_1.Component({
             selector: 'bootstrap-timepicker',

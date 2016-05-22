@@ -13,7 +13,7 @@
     <div class="col-md-4">
       <div class="well">
         <div class="form-group">
-          <bootstrap-datepicker [(date)]="date"></bootstrap-datepicker>
+          <bootstrap-datepicker [(date)]="date" (change)="onDateChange($event)"></bootstrap-datepicker>
         </div>
       </div>
       <pickup-comments [comments]="activity.comments"></pickup-comments>

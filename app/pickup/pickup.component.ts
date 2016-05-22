@@ -60,4 +60,8 @@ export class PickupComponent implements OnInit {
   onAddEvent(activity:Activity) {
     EventDialogComponent.show(activity);
   }
+
+  onDateChange(date) {
+    this.router.navigate(['/pickup', this.name, date]);
+  }
 }
