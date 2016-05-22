@@ -14,7 +14,7 @@ import { EditService } from './edit.service';
 })
 @Routes([
   { path: '/', component: DashboardComponent },
-  { path: '/pickup/:name', component: PickupComponent }
+  { path: '/pickup/:name/:date', component: PickupComponent }
 ])
 export class AppComponent {
   year:number;

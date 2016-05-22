@@ -14,9 +14,10 @@ var activity_dialog_component_1 = require('../activity/activity-dialog.component
 var activity_service_1 = require('../activity/activity.service');
 var edit_service_1 = require('../edit.service');
 var DashboardComponent = (function () {
-    function DashboardComponent(activityService, editService) {
+    function DashboardComponent(activityService, editService, router) {
         this.activityService = activityService;
         this.editService = editService;
+        this.router = router;
         this.activities = [];
         this.toggle = false;
     }
@@ -29,6 +30,9 @@ var DashboardComponent = (function () {
     };
     DashboardComponent.prototype.onAddActivity = function () {
         activity_dialog_component_1.ActivityDialogComponent.show();
+    };
+    DashboardComponent.prototype.onSelectActivity = function (activity) {
+        this.router.navigate(['/pickup', activity.name, moment().format('YYYY-MM-DD')]);
     };
     DashboardComponent = __decorate([
         core_1.Component({
@@ -43,7 +47,7 @@ var DashboardComponent = (function () {
                 activity_dialog_component_1.ActivityDialogComponent
             ]
         }), 
-        __metadata('design:paramtypes', [activity_service_1.ActivityService, edit_service_1.EditService])
+        __metadata('design:paramtypes', [activity_service_1.ActivityService, edit_service_1.EditService, router_1.Router])
     ], DashboardComponent);
     return DashboardComponent;
 }());

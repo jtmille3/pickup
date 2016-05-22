@@ -12,10 +12,10 @@ import { ActivityService } from '../activity/activity.service';
 
 import { EditService } from '../edit.service';
 
-import { BootstrapDateTimePickerComponent } from '../components/bootstrap-datetimepicker.component';
+import { BootstrapDatePickerComponent } from '../components/bootstrap-datepicker.component';
 
 @Component({
-  selector: 'pickup',
+  selector: 'pickup-day',
   templateUrl: 'app/pickup/pickup.component.html',
   styleUrls: ['app/pickup/pickup.component.css'],
   providers: [
@@ -25,13 +25,16 @@ import { BootstrapDateTimePickerComponent } from '../components/bootstrap-dateti
     ROUTER_DIRECTIVES,
     PickupEventsComponent,
     PickupCommentsComponent,
-    BootstrapDateTimePickerComponent,
+    BootstrapDatePickerComponent,
     EventDialogComponent
   ]
 })
 export class PickupComponent implements OnInit {
 
   @Output() activity:Activity;
+
+  date:string = '';
+  name:string = '';
 
   constructor(
     private activityService:ActivityService,
@@ -40,8 +43,10 @@ export class PickupComponent implements OnInit {
     private routeParams: RouteSegment) {}
 
   ngOnInit() {
-    var name:string = this.routeParams.getParam('name');
-    this.activityService.getActivity(name).subscribe(activity => this.activity = activity);
+    this.name = this.routeParams.getParam('name');
+    this.date = this.routeParams.getParam('date');
+
+    this.activityService.getActivity(this.name).subscribe(activity => this.activity = activity);
   }
 
   onDeleteActivity(activity:Activity) {

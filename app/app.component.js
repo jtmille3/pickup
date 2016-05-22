@@ -31,7 +31,7 @@ var AppComponent = (function () {
         }),
         router_1.Routes([
             { path: '/', component: dashboard_component_1.DashboardComponent },
-            { path: '/pickup/:name', component: pickup_component_1.PickupComponent }
+            { path: '/pickup/:name/:date', component: pickup_component_1.PickupComponent }
         ]), 
         __metadata('design:paramtypes', [edit_service_1.EditService])
     ], AppComponent);

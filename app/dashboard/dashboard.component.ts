@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
 import { ActivityDialogComponent } from '../activity/activity-dialog.component';
 
@@ -10,6 +10,7 @@ import { Activity } from '../activity/activity';
 import { EditService } from '../edit.service';
 
 declare var $;
+declare var moment;
 
 @Component({
   selector: 'dashboard',
@@ -31,7 +32,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private activityService:ActivityService,
-    private editService:EditService
+    private editService:EditService,
+    private router:Router
   ) {}
 
   ngOnInit() {
@@ -43,5 +45,9 @@ export class DashboardComponent implements OnInit {
 
   onAddActivity() {
     ActivityDialogComponent.show();
+  }
+
+  onSelectActivity(activity:Activity) {
+    this.router.navigate(['/pickup', activity.name, moment().format('YYYY-MM-DD')]);
   }
 }

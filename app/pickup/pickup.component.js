@@ -16,18 +16,21 @@ var event_dialog_component_1 = require('../event/event-dialog.component');
 var activity_1 = require('../activity/activity');
 var activity_service_1 = require('../activity/activity.service');
 var edit_service_1 = require('../edit.service');
-var bootstrap_datetimepicker_component_1 = require('../components/bootstrap-datetimepicker.component');
+var bootstrap_datepicker_component_1 = require('../components/bootstrap-datepicker.component');
 var PickupComponent = (function () {
     function PickupComponent(activityService, editService, router, routeParams) {
         this.activityService = activityService;
         this.editService = editService;
         this.router = router;
         this.routeParams = routeParams;
+        this.date = '';
+        this.name = '';
     }
     PickupComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var name = this.routeParams.getParam('name');
-        this.activityService.getActivity(name).subscribe(function (activity) { return _this.activity = activity; });
+        this.name = this.routeParams.getParam('name');
+        this.date = this.routeParams.getParam('date');
+        this.activityService.getActivity(this.name).subscribe(function (activity) { return _this.activity = activity; });
     };
     PickupComponent.prototype.onDeleteActivity = function (activity) {
         var _this = this;
@@ -45,7 +48,7 @@ var PickupComponent = (function () {
     ], PickupComponent.prototype, "activity", void 0);
     PickupComponent = __decorate([
         core_1.Component({
-            selector: 'pickup',
+            selector: 'pickup-day',
             templateUrl: 'app/pickup/pickup.component.html',
             styleUrls: ['app/pickup/pickup.component.css'],
             providers: [
@@ -55,7 +58,7 @@ var PickupComponent = (function () {
                 router_1.ROUTER_DIRECTIVES,
                 pickup_events_component_1.PickupEventsComponent,
                 pickup_comments_component_1.PickupCommentsComponent,
-                bootstrap_datetimepicker_component_1.BootstrapDateTimePickerComponent,
+                bootstrap_datepicker_component_1.BootstrapDatePickerComponent,
                 event_dialog_component_1.EventDialogComponent
             ]
         }), 
