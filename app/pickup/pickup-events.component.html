@@ -1,10 +1,10 @@
 <div *ngFor="let event of activity.events" class="event">
   <form class="form-inline">
     <div class="form-group">
-      <button class="btn btn-danger glyphicon glyphicon-trash" (click)="onRemoveEvent(event)" title="Delete event"></button>
+      <button class="btn btn-danger btn-xs glyphicon glyphicon-trash" (click)="onRemoveEvent(event)" title="Delete event"></button>
       <span class="control-label">{{event.space.name}} @ {{event.time.name}} - {{event.participants.length}} Signup(s)</span>
-      <button *ngIf="event.participants.indexOf(USER_ID) === -1" class="btn btn-xs btn-success" (click)="onAddMe(event)"><i class="glyphicon glyphicon-thumbs-up"></i> I'm in!</button>
-      <button *ngIf="event.participants.indexOf(USER_ID) !== -1" class="btn btn-xs btn-danger" (click)="onRemoveMe(event)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button>
+      <button *ngIf="event.participants.indexOf(USER_ID) === -1" class="btn btn-xs btn-success signup" (click)="onAddMe(event)"><i class="glyphicon glyphicon-thumbs-up"></i> I'm in!</button>
+      <button *ngIf="event.participants.indexOf(USER_ID) !== -1" class="btn btn-xs btn-danger signup" (click)="onRemoveMe(event)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button>
     </div>
   </form>
   <pickup-participants [participants]="event.participants"></pickup-participants>

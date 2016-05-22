@@ -24,8 +24,7 @@ var BootstrapDateTimePickerComponent = (function () {
     BootstrapDateTimePickerComponent = __decorate([
         core_1.Component({
             selector: 'bootstrap-datetimepicker',
-            templateUrl: 'app/components/bootstrap-datetimepicker.component.html',
-            styleUrls: ['app/components/bootstrap-datetimepicker.component.css']
+            template: ''
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], BootstrapDateTimePickerComponent);

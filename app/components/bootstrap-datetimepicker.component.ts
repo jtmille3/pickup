@@ -4,8 +4,7 @@ declare var $;
 
 @Component({
   selector: 'bootstrap-datetimepicker',
-  templateUrl: 'app/components/bootstrap-datetimepicker.component.html',
-  styleUrls: ['app/components/bootstrap-datetimepicker.component.css']
+  template: ''
 })
 export class BootstrapDateTimePickerComponent implements OnInit {
 

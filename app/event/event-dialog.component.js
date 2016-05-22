@@ -10,12 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var bootstrap_timepicker_component_1 = require('../components/bootstrap-timepicker.component');
 var EventDialogComponent = (function () {
     function EventDialogComponent() {
     }
-    EventDialogComponent.prototype.ngOnInit = function () { };
+    EventDialogComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        $('#event-modal').on('show.bs.modal', function () {
+            _this.time = moment().format('HH:mm');
+            _this.space = '';
+        });
+    };
     EventDialogComponent.prototype.onAddEvent = function () {
-        if (!this.space) {
+        if (!this.space || !this.time) {
             return;
         }
         var time = {
@@ -33,8 +40,6 @@ var EventDialogComponent = (function () {
         };
         EventDialogComponent.activity.events.push(event);
         $('#event-modal').modal('hide');
-        this.space = '';
-        this.time = '';
     };
     EventDialogComponent.show = function (activity) {
         EventDialogComponent.activity = activity;
@@ -47,7 +52,8 @@ var EventDialogComponent = (function () {
             templateUrl: 'app/event/event-dialog.component.html',
             styleUrls: ['app/event/event-dialog.component.css'],
             directives: [
-                router_1.ROUTER_DIRECTIVES
+                router_1.ROUTER_DIRECTIVES,
+                bootstrap_timepicker_component_1.BootstrapTimePickerComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

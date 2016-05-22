@@ -2,19 +2,23 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
+import { BootstrapTimePickerComponent } from '../components/bootstrap-timepicker.component';
+
 import { Activity } from '../activity/activity';
 import { Event } from './event';
 import { Space } from '../space/space';
 import { Time } from '../time/time';
 
 declare var $;
+declare var moment;
 
 @Component({
   selector: 'event-dialog',
   templateUrl: 'app/event/event-dialog.component.html',
   styleUrls: ['app/event/event-dialog.component.css'],
   directives: [
-    ROUTER_DIRECTIVES
+    ROUTER_DIRECTIVES,
+    BootstrapTimePickerComponent
   ]
 })
 export class EventDialogComponent implements OnInit {
@@ -26,10 +30,15 @@ export class EventDialogComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    $('#event-modal').on('show.bs.modal', () => {
+      this.time = moment().format('HH:mm');
+      this.space = '';
+    });
+  }
 
   onAddEvent() {
-    if(!this.space) {
+    if(!this.space || !this.time) {
       return;
     }
 
@@ -52,9 +61,6 @@ export class EventDialogComponent implements OnInit {
     EventDialogComponent.activity.events.push(event);
 
     $('#event-modal').modal('hide');
-
-    this.space = '';
-    this.time = '';
   }
 
   public static show(activity:Activity):void {
