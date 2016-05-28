@@ -29,8 +29,23 @@ var PickupEventsComponent = (function () {
         event.participants.push(this.USER_ID);
         return false;
     };
+    PickupEventsComponent.prototype.onAddGuest = function (event) {
+        if (!_.contains(event.participants, this.USER_ID)) {
+            return;
+        }
+        this.USER_ID.guests++;
+        var guest = {
+            participantId: this.USER_ID.participantId,
+            name: 'Guest',
+            guests: 0
+        };
+        event.participants.push(guest);
+        return false;
+    };
     PickupEventsComponent.prototype.onRemoveMe = function (event) {
-        event.participants = _.without(event.participants, this.USER_ID);
+        var _this = this;
+        this.USER_ID.guests = 0;
+        event.participants = _.filter(event.participants, function (participant) { return _this.USER_ID.participantId !== participant.participantId; });
         return false;
     };
     PickupEventsComponent.prototype.onRemoveEvent = function (event) {

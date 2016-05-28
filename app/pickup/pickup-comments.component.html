@@ -1,8 +1,12 @@
 <div class="well">
   <form class="form-inline">
     <div class="form-group">
-      <input type="text" class="form-control" [(ngModel)]="comment" (key.enter)="onSubmit()"/>
-      <button class="btn btn-primary" (click)="onSubmit()">Comment</button>
+      <table>
+        <tr>
+          <td style="width:99%"><input type="text" class="form-control" [(ngModel)]="comment" (key.enter)="onSubmit()"/></td>
+          <td style="width:1%"><button class="btn btn-primary" (click)="onSubmit()">Comment</button></td>
+        </tr>
+      </table>
     </div>
   </form>
 </div>
