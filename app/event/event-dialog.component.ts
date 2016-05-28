@@ -32,7 +32,7 @@ export class EventDialogComponent implements OnInit {
 
   ngOnInit() {
     $('#event-modal').on('show.bs.modal', () => {
-      this.time = moment().format('HH:mm');
+      this.time = moment().format('h:mm A');
       this.space = '';
     });
   }

@@ -17,7 +17,7 @@ var EventDialogComponent = (function () {
     EventDialogComponent.prototype.ngOnInit = function () {
         var _this = this;
         $('#event-modal').on('show.bs.modal', function () {
-            _this.time = moment().format('HH:mm');
+            _this.time = moment().format('h:mm A');
             _this.space = '';
         });
     };
