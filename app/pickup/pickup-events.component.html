@@ -1,11 +1,15 @@
 <div *ngFor="let event of activity.events" class="event">
   <form class="form-inline">
     <div class="form-group">
-      <span class="control-label">{{event.space.name}} @ {{event.time.name}}, {{event.participants.length}} Joined</span>
+      <span class="control-label">{{event.space.name}} @ {{event.time.name}}</span>
       <button *ngIf="event.participants.indexOf(USER_ID) === -1 && !editService.edit" class="btn btn-xs btn-success signup" (click)="onAddMe(event)"><i class="glyphicon glyphicon-thumbs-up"></i> I'm in!</button>
       <!-- <button *ngIf="event.participants.indexOf(USER_ID) !== -1 && !editService.edit" class="btn btn-xs btn-danger signup" (click)="onRemoveMe(event)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button> -->
       <button *ngIf="!editService.edit" class="btn btn-xs btn-primary signup" (click)="onAddGuest(event)"><i class="glyphicon glyphicon-user"></i> Add Guest</button>
       <button *ngIf="editService.edit" class="btn btn-danger btn-xs glyphicon glyphicon-trash" (click)="onRemoveEvent(event)" title="Delete event"></button>
+      <div class="pull-right control-label">
+        <span>{{event.participants.length}}</span>
+        <i class="glyphicon glyphicon-user"></i>
+      </div>
     </div>
   </form>
   <pickup-participants [(participants)]="event.participants"></pickup-participants>
