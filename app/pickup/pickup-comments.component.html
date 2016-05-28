@@ -1,29 +1,33 @@
 <div class="well">
   <form class="form-inline">
     <div class="form-group">
-      <table>
-        <tr>
-          <td style="width:99%"><input type="text" class="form-control" [(ngModel)]="comment" (key.enter)="onSubmit()"/></td>
-          <td style="width:1%"><button class="btn btn-primary" (click)="onSubmit()">Comment</button></td>
-        </tr>
+      <table class="comment">
+        <tbody>
+          <tr>
+            <td><input type="text" class="form-control" [(ngModel)]="comment" (key.enter)="onSubmit()"/></td>
+            <td><button class="btn btn-primary" (click)="onSubmit()">Comment</button></td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </form>
 </div>
 <div *ngIf="comments.length" class="well">
   <table class="table">
-    <tr *ngFor="let comment of comments">
-      <td>
-        <img src="app/img/unknown.jpeg" />
-      </td>
-      <td>
-        <a href="http://sww.sas.com/sww/tools/phonelist/?keyword={{comment.participantId}}">{{comment.participantId}}</a> @ {{comment.timestamp | date:'h:mm:ss a'}}
-        <br/>
-        {{comment.text}}
-      </td>
-      <td>
-        <button *ngIf="comment.participantId === USER_ID.participantId" class="btn btn-danger glyphicon glyphicon-trash delete" (click)="onDelete(comment)" title="Delete comment"></button>
-      </td>
-    </tr>
+    <tbody>
+      <tr *ngFor="let comment of comments">
+        <td>
+          <img src="app/img/unknown.jpeg" />
+        </td>
+        <td>
+          <a href="http://sww.sas.com/sww/tools/phonelist/?keyword={{comment.participantId}}">{{comment.participantId}}</a> @ {{comment.timestamp | date:'h:mm:ss a'}}
+          <br/>
+          {{comment.text}}
+        </td>
+        <td>
+          <button *ngIf="comment.participantId === USER_ID.participantId" class="btn btn-danger glyphicon glyphicon-trash delete" (click)="onDelete(comment)" title="Delete comment"></button>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>

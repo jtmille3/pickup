@@ -13,7 +13,8 @@ import { Participant } from './participant/participant';
 
 var me:Participant = {
   participantId: 'jemill',
-  name: 'Jeff Miller'
+  name: 'Jeff Miller',
+  guest: false
 }
 
 bootstrap(AppComponent, [

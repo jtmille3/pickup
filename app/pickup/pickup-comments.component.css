@@ -7,15 +7,24 @@ input[type="text"] {
   width: 100%;
 }
 
-table {
+table.comment td:nth-child(1) {
+  width:99%;
+}
+
+table.comment td:nth-child(2) {
+  width:1%;
+}
+
+table.table {
   margin-bottom: 0;
+  background-color: #fff;
 }
 
 td {
   padding: 0px 8px;
 }
 
-td:nth-child(1), td:nth-child(3) {
+table.table td:nth-child(1), table.table td:nth-child(3) {
   width:1px;
 }
 

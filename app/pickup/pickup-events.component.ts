@@ -40,7 +40,8 @@ export class PickupEventsComponent implements OnInit {
   onAddGuest(event:Event) {
     var guest:Participant = {
       participantId: this.USER_ID.participantId,
-      name: 'Guest'
+      name: 'Guest',
+      guest: true
     };
 
     event.participants.push(guest);

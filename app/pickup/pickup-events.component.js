@@ -32,7 +32,8 @@ var PickupEventsComponent = (function () {
     PickupEventsComponent.prototype.onAddGuest = function (event) {
         var guest = {
             participantId: this.USER_ID.participantId,
-            name: 'Guest'
+            name: 'Guest',
+            guest: true
         };
         event.participants.push(guest);
         return false;

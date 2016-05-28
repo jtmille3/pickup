@@ -1,5 +1,6 @@
 <div class="participant well" *ngFor="let participant of participants"
         [class.me]="participant.participantId === USER_ID.participantId"
+        [class.guest]="participant.guest"
         (click)="onRemove(participant)">
   <div>
     <img src="app/img/unknown.jpeg" />
