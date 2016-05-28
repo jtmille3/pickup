@@ -17,6 +17,9 @@ export class PickupParticipantsComponent implements OnInit {
   ngOnInit() {}
 
   onRemove(participant:Participant) {
+    if(participant.participantId !== this.USER_ID.participantId) {
+      return;
+    }
     this.participants = _.without(this.participants, participant);
     this.participantsChange.emit(this.participants);
   }

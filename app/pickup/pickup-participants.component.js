@@ -20,6 +20,9 @@ var PickupParticipantsComponent = (function () {
     }
     PickupParticipantsComponent.prototype.ngOnInit = function () { };
     PickupParticipantsComponent.prototype.onRemove = function (participant) {
+        if (participant.participantId !== this.USER_ID.participantId) {
+            return;
+        }
         this.participants = _.without(this.participants, participant);
         this.participantsChange.emit(this.participants);
     };
