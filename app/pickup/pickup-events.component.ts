@@ -38,16 +38,9 @@ export class PickupEventsComponent implements OnInit {
   }
 
   onAddGuest(event:Event) {
-    if(!_.contains(event.participants, this.USER_ID)) {
-      return;
-    }
-
-    this.USER_ID.guests++;
-
     var guest:Participant = {
       participantId: this.USER_ID.participantId,
-      name: 'Guest',
-      guests: 0
+      name: 'Guest'
     };
 
     event.participants.push(guest);
@@ -56,8 +49,7 @@ export class PickupEventsComponent implements OnInit {
   }
 
   onRemoveMe(event:Event) {
-    this.USER_ID.guests = 0;
-    event.participants = _.filter(event.participants, participant => this.USER_ID.participantId !== participant.participantId);
+    event.participants = _.without(event.participants, this.USER_ID);
 
     return false;
   }

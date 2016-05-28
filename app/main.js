@@ -7,8 +7,7 @@ var edit_service_1 = require('./edit.service');
 var core_1 = require('@angular/core');
 var me = {
     participantId: 'jemill',
-    name: 'Jeff Miller',
-    guests: 0
+    name: 'Jeff Miller'
 };
 platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [
     http_1.HTTP_PROVIDERS,

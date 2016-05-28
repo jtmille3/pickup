@@ -8,6 +8,7 @@
         </div>
         <a *ngIf="editService.edit" class="add-event" (click)="onAddEvent(activity)" title="Add event"><i class="glyphicon glyphicon-plus"></i></a>
       </form>
+      <hr />
       <pickup-events [activity]="activity"></pickup-events>
     </div>
     <div class="col-md-4">

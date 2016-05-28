@@ -16,12 +16,21 @@ var participant_1 = require('../participant/participant');
 var PickupParticipantsComponent = (function () {
     function PickupParticipantsComponent(USER_ID) {
         this.USER_ID = USER_ID;
+        this.participantsChange = new core_1.EventEmitter(); // an event emitter
     }
     PickupParticipantsComponent.prototype.ngOnInit = function () { };
+    PickupParticipantsComponent.prototype.onRemove = function (participant) {
+        this.participants = _.without(this.participants, participant);
+        this.participantsChange.emit(this.participants);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
     ], PickupParticipantsComponent.prototype, "participants", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], PickupParticipantsComponent.prototype, "participantsChange", void 0);
     PickupParticipantsComponent = __decorate([
         core_1.Component({
             selector: 'pickup-participants',
