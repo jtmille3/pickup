@@ -25,17 +25,9 @@ var EventDialogComponent = (function () {
         if (!this.space || !this.time) {
             return;
         }
-        var time = {
-            timeId: -1,
-            name: this.time
-        };
-        var space = {
-            spaceId: -1,
-            name: this.space
-        };
         var event = {
-            time: time,
-            space: space,
+            time: this.time,
+            space: this.space,
             participants: []
         };
         EventDialogComponent.activity.events.push(event);

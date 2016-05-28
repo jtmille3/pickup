@@ -6,8 +6,6 @@ import { BootstrapTimePickerComponent } from '../components/bootstrap-timepicker
 
 import { Activity } from '../activity/activity';
 import { Event } from './event';
-import { Space } from '../space/space';
-import { Time } from '../time/time';
 
 declare var $;
 declare var moment;
@@ -42,19 +40,9 @@ export class EventDialogComponent implements OnInit {
       return;
     }
 
-    var time:Time = {
-      timeId: -1,
-      name: this.time
-    }
-
-    var space:Space = {
-      spaceId: -1,
-      name: this.space
-    }
-
     var event:Event = {
-      time: time,
-      space: space,
+      time: this.time,
+      space: this.space,
       participants: []
     };
 

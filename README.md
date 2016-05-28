@@ -27,11 +27,11 @@ Hyperlinks per activity (mailing lists, RFC info, field status, gym status, etc)
 Add Weather globally
 Add icons for dashboard activities?
 Work on styling, very grayish right now.
-Refactor space and time
+Refactor space and time to event
  - Normalize into a single entity
  - Will affect the database tables
 Finish services
  - Participants
  - Activities
- - Space and Time
+ - Events
  - Comments
