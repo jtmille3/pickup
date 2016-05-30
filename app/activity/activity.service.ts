@@ -5,8 +5,6 @@ import {Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@
 
 import { Activity } from './activity';
 
-declare var _;
-
 /**
 http://sww.sas.com/~jemill/pickup/services/sport.php/sports
 

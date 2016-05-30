@@ -2,8 +2,6 @@ import { Component, Input, OnInit, Inject } from '@angular/core';
 
 import { Comment } from '../comment/comment';
 
-declare var _;
-
 @Component({
   selector: 'pickup-comments',
   templateUrl: 'app/pickup/pickup-comments.component.html',

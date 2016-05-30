@@ -1,8 +1,5 @@
 import { Component, Input, Output, OnInit, OnChanges, ElementRef, EventEmitter } from '@angular/core';
 
-declare var $;
-declare var moment;
-
 @Component({
   selector: 'bootstrap-timepicker',
   template: ''

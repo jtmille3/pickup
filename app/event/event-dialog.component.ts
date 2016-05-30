@@ -7,9 +7,6 @@ import { BootstrapTimePickerComponent } from '../components/bootstrap-timepicker
 import { Activity } from '../activity/activity';
 import { Event } from './event';
 
-declare var $;
-declare var moment;
-
 @Component({
   selector: 'event-dialog',
   templateUrl: 'app/event/event-dialog.component.html',

@@ -9,9 +9,6 @@ import { Activity } from '../activity/activity';
 
 import { EditService } from '../edit.service';
 
-declare var $;
-declare var moment;
-
 @Component({
   selector: 'dashboard',
   templateUrl: 'app/dashboard/dashboard.component.html',

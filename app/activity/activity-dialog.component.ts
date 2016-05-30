@@ -5,8 +5,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ActivityService } from './activity.service';
 import { Activity } from './activity';
 
-declare var $;
-
 @Component({
   selector: 'activity-dialog',
   templateUrl: 'app/activity/activity-dialog.component.html',

@@ -8,8 +8,6 @@ import { PickupParticipantsComponent } from './pickup-participants.component';
 
 import { EditService } from '../edit.service';
 
-declare var $;
-
 @Component({
   selector: 'pickup-events',
   templateUrl: 'app/pickup/pickup-events.component.html',
