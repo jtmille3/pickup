@@ -15,6 +15,11 @@ var LinksComponent = (function () {
         this.editService = editService;
         this.linksChange = new core_1.EventEmitter();
     }
+    LinksComponent.prototype.onDelete = function (link) {
+        this.links = _.without(this.links, link);
+        this.linksChange.emit(this.links);
+        return false;
+    };
     LinksComponent.prototype.ngOnInit = function () { };
     __decorate([
         core_1.Input(), 

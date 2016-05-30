@@ -8,6 +8,7 @@
         </div>
         <button *ngIf="editService.edit" type="button" class="add-event btn btn-primary" (click)="onAddEvent(activity)" title="Add event"><i class="glyphicon glyphicon-plus"></i> Add event</button>
         <button *ngIf="editService.edit" type="button" class="add-notification btn btn-primary" (click)="onAddNotification(activity)" title="Add notification"><i class="glyphicon glyphicon-bell"></i> Add notification</button>
+        <button *ngIf="editService.edit" type="button" class="add-notification btn btn-primary" (click)="onAddLink(activity)" title="Add link"><i class="glyphicon glyphicon-link"></i> Add link</button>
       </form>
       <notifications [(notifications)]="activity.notifications"></notifications>
       <events [(events)]="activity.events"></events>
@@ -26,3 +27,4 @@
 
 <event-dialog></event-dialog>
 <notification-dialog></notification-dialog>
+<link-dialog></link-dialog>

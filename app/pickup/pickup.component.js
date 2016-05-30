@@ -16,6 +16,7 @@ var comments_component_1 = require('../comment/comments.component');
 var notification_dialog_component_1 = require('../notification/notification-dialog.component');
 var event_dialog_component_1 = require('../event/event-dialog.component');
 var links_component_1 = require('../link/links.component');
+var link_dialog_component_1 = require('../link/link-dialog.component');
 var activity_1 = require('../activity/activity');
 var activity_service_1 = require('../activity/activity.service');
 var edit_service_1 = require('../edit.service');
@@ -48,6 +49,9 @@ var PickupComponent = (function () {
     PickupComponent.prototype.onAddNotification = function (activity) {
         notification_dialog_component_1.NotificationDialogComponent.show(activity);
     };
+    PickupComponent.prototype.onAddLink = function (activity) {
+        link_dialog_component_1.LinkDialogComponent.show(activity);
+    };
     PickupComponent.prototype.onDateChange = function (date) {
         this.router.navigate(['/pickup', this.name, date]);
     };
@@ -71,7 +75,8 @@ var PickupComponent = (function () {
                 event_dialog_component_1.EventDialogComponent,
                 notification_dialog_component_1.NotificationDialogComponent,
                 notifications_component_1.NotificationsComponent,
-                links_component_1.LinksComponent
+                links_component_1.LinksComponent,
+                link_dialog_component_1.LinkDialogComponent
             ]
         }), 
         __metadata('design:paramtypes', [activity_service_1.ActivityService, edit_service_1.EditService, router_1.Router, router_1.RouteSegment])

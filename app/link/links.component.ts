@@ -18,5 +18,11 @@ export class LinksComponent implements OnInit {
     private editService:EditService
   ) {}
 
+  onDelete(link:Link) {
+    this.links = _.without(this.links, link);
+    this.linksChange.emit(this.links);
+    return false;
+  }
+
   ngOnInit() {}
 }

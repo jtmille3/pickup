@@ -8,6 +8,7 @@ import { CommentsComponent } from '../comment/comments.component';
 import { NotificationDialogComponent } from '../notification/notification-dialog.component';
 import { EventDialogComponent } from '../event/event-dialog.component';
 import { LinksComponent } from '../link/links.component';
+import { LinkDialogComponent } from '../link/link-dialog.component';
 
 import { Activity } from '../activity/activity';
 import { ActivityService } from '../activity/activity.service';
@@ -31,7 +32,8 @@ import { BootstrapDatePickerComponent } from '../components/bootstrap-datepicker
     EventDialogComponent,
     NotificationDialogComponent,
     NotificationsComponent,
-    LinksComponent
+    LinksComponent,
+    LinkDialogComponent
   ]
 })
 export class PickupComponent implements OnInit {
@@ -68,6 +70,10 @@ export class PickupComponent implements OnInit {
 
   onAddNotification(activity:Activity) {
     NotificationDialogComponent.show(activity);
+  }
+
+  onAddLink(activity:Activity) {
+    LinkDialogComponent.show(activity);
   }
 
   onDateChange(date) {
