@@ -13,6 +13,7 @@ var router_1 = require('@angular/router');
 var notifications_component_1 = require('../notification/notifications.component');
 var events_component_1 = require('../event/events.component');
 var comments_component_1 = require('../comment/comments.component');
+var notification_dialog_component_1 = require('../notification/notification-dialog.component');
 var event_dialog_component_1 = require('../event/event-dialog.component');
 var activity_1 = require('../activity/activity');
 var activity_service_1 = require('../activity/activity.service');
@@ -43,6 +44,9 @@ var PickupComponent = (function () {
     PickupComponent.prototype.onAddEvent = function (activity) {
         event_dialog_component_1.EventDialogComponent.show(activity);
     };
+    PickupComponent.prototype.onAddNotification = function (activity) {
+        notification_dialog_component_1.NotificationDialogComponent.show(activity);
+    };
     PickupComponent.prototype.onDateChange = function (date) {
         this.router.navigate(['/pickup', this.name, date]);
     };
@@ -64,6 +68,7 @@ var PickupComponent = (function () {
                 comments_component_1.CommentsComponent,
                 bootstrap_datepicker_component_1.BootstrapDatePickerComponent,
                 event_dialog_component_1.EventDialogComponent,
+                notification_dialog_component_1.NotificationDialogComponent,
                 notifications_component_1.NotificationsComponent
             ]
         }), 

@@ -5,7 +5,7 @@ import { Router, RouteSegment, ROUTER_DIRECTIVES } from '@angular/router';
 import { NotificationsComponent } from '../notification/notifications.component';
 import { EventsComponent } from '../event/events.component';
 import { CommentsComponent } from '../comment/comments.component';
-
+import { NotificationDialogComponent } from '../notification/notification-dialog.component';
 import { EventDialogComponent } from '../event/event-dialog.component';
 
 import { Activity } from '../activity/activity';
@@ -28,6 +28,7 @@ import { BootstrapDatePickerComponent } from '../components/bootstrap-datepicker
     CommentsComponent,
     BootstrapDatePickerComponent,
     EventDialogComponent,
+    NotificationDialogComponent,
     NotificationsComponent
   ]
 })
@@ -61,6 +62,10 @@ export class PickupComponent implements OnInit {
 
   onAddEvent(activity:Activity) {
     EventDialogComponent.show(activity);
+  }
+
+  onAddNotification(activity:Activity) {
+    NotificationDialogComponent.show(activity);
   }
 
   onDateChange(date) {

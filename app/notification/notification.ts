@@ -7,6 +7,6 @@ export enum NotificationType {
 
 export class Notification {
   notificationId:number;
-  title:string;
+  text:string;
   type:NotificationType;
 }

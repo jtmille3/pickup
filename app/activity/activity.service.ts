@@ -71,7 +71,7 @@ var ACTIVITIES = [{
   notifications: [
     {
       notificationId: 1,
-      title: 'This is a test',
+      text: 'This is a test',
       type: NotificationType.Info
     }
   ],
