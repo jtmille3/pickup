@@ -1,0 +1,8 @@
+<div class="alert alert-dismissible" role="alert" *ngFor="let notification of notifications"
+  [class.alert-info]="notification.type === notificationType.Info"
+  [class.alert-warning]="notification.type === notificationType.Warning"
+  [class.alert-success]="notification.type === notificationType.Success"
+  [class.alert-danger]="notification.type === notificationType.Danger">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onClose(notification)"><span aria-hidden="true">&times;</span></button>
+  {{notification.title}}
+</div>

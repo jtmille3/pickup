@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var Observable_1 = require('rxjs/Observable');
 var http_1 = require('@angular/http');
+var notification_1 = require('../notification/notification');
 /**
 http://sww.sas.com/~jemill/pickup/services/sport.php/sports
 
@@ -51,7 +52,7 @@ var ActivityService = (function () {
         });
     };
     ActivityService.prototype.updateActivity = function (activity) {
-        var index = _.findIndex(ACTIVITIES, function (_activity) { return _activity.id === activity.activityId; });
+        var index = _.findIndex(ACTIVITIES, function (_activity) { return _activity.activityId === activity.activityId; });
         ACTIVITIES[index] = activity;
         return Observable_1.Observable.create(function (observer) {
             observer.next(activity);
@@ -77,6 +78,13 @@ var ACTIVITIES = [{
         activityId: 1,
         name: 'Soccer',
         signups: 23,
+        notifications: [
+            {
+                notificationId: 1,
+                title: 'This is a test',
+                type: notification_1.NotificationType.Info
+            }
+        ],
         comments: [
             {
                 commentId: 0,
@@ -92,36 +100,39 @@ var ACTIVITIES = [{
             }
         ],
         events: [{
-                time: { name: '11:30 AM' },
-                space: { name: 'Field 1' },
+                time: '11:30 AM',
+                space: 'Field 1',
                 participants: [{
                         participantId: 'joblow',
-                        name: 'Joe Blow'
+                        name: 'Joe Blow',
+                        guest: false
                     }]
             }, {
-                time: { name: '12:30 PM' },
-                space: { name: 'Field 1' },
+                time: '12:30 PM',
+                space: 'Field 1',
                 participants: []
             }, {
-                time: { name: '11:30 AM' },
-                space: { name: 'Field 2' },
+                time: '11:30 AM',
+                space: 'Field 2',
                 participants: []
             }, {
-                time: { name: '12:30 PM' },
-                space: { name: 'Field 2' },
+                time: '12:30 PM',
+                space: 'Field 2',
                 participants: []
             }]
     }, {
-        id: 2,
+        activityId: 2,
         name: 'Basketball',
         signups: 12,
         comments: [],
-        events: []
+        events: [],
+        notifications: []
     }, {
-        id: 3,
+        activityId: 3,
         name: 'Futsal',
         signups: 7,
         comments: [],
-        events: []
+        events: [],
+        notifications: []
     }];
 //# sourceMappingURL=activity.service.js.map

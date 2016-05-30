@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8">
+      <notifications [notifications]="activity.notifications"></notifications>
       <form class="form-inline">
         <button *ngIf="editService.edit" class="btn btn-danger delete glyphicon glyphicon-trash" (click)="onDeleteActivity(activity)" title="Delete activity"></button>
         <div class="form-group">

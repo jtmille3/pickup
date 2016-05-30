@@ -2,6 +2,7 @@ import { Component, Output, OnInit } from '@angular/core';
 
 import { Router, RouteSegment, ROUTER_DIRECTIVES } from '@angular/router';
 
+import { NotificationsComponent } from '../notification/notifications.component';
 import { PickupEventsComponent } from './pickup-events.component';
 import { PickupCommentsComponent } from './pickup-comments.component';
 
@@ -26,7 +27,8 @@ import { BootstrapDatePickerComponent } from '../components/bootstrap-datepicker
     PickupEventsComponent,
     PickupCommentsComponent,
     BootstrapDatePickerComponent,
-    EventDialogComponent
+    EventDialogComponent,
+    NotificationsComponent
   ]
 })
 export class PickupComponent implements OnInit {

@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var notifications_component_1 = require('../notification/notifications.component');
 var pickup_events_component_1 = require('./pickup-events.component');
 var pickup_comments_component_1 = require('./pickup-comments.component');
 var event_dialog_component_1 = require('../event/event-dialog.component');
@@ -62,7 +63,8 @@ var PickupComponent = (function () {
                 pickup_events_component_1.PickupEventsComponent,
                 pickup_comments_component_1.PickupCommentsComponent,
                 bootstrap_datepicker_component_1.BootstrapDatePickerComponent,
-                event_dialog_component_1.EventDialogComponent
+                event_dialog_component_1.EventDialogComponent,
+                notifications_component_1.NotificationsComponent
             ]
         }), 
         __metadata('design:paramtypes', [activity_service_1.ActivityService, edit_service_1.EditService, router_1.Router, router_1.RouteSegment])

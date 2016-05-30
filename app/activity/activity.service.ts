@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import {Http, Response, RequestOptions, Headers, Request, RequestMethod} from '@angular/http';
 
 import { Activity } from './activity';
+import { NotificationType } from '../notification/notification';
 
 /**
 http://sww.sas.com/~jemill/pickup/services/sport.php/sports
@@ -45,7 +46,7 @@ export class ActivityService {
   }
 
   updateActivity(activity:Activity) {
-    var index:number = _.findIndex(ACTIVITIES, _activity => _activity.id === activity.activityId);
+    var index:number = _.findIndex(ACTIVITIES, _activity => _activity.activityId === activity.activityId);
     ACTIVITIES[index] = activity;
     return Observable.create(observer => {
       observer.next(activity);
@@ -67,6 +68,13 @@ var ACTIVITIES = [{
   activityId: 1,
   name: 'Soccer',
   signups: 23,
+  notifications: [
+    {
+      notificationId: 1,
+      title: 'This is a test',
+      type: NotificationType.Info
+    }
+  ],
   comments: [
     {
       commentId: 0,
@@ -82,35 +90,38 @@ var ACTIVITIES = [{
     }
   ],
   events: [{
-    time: { name:'11:30 AM' },
-    space: { name: 'Field 1' },
+    time: '11:30 AM',
+    space: 'Field 1',
     participants: [{
         participantId: 'joblow',
-        name: 'Joe Blow'
+        name: 'Joe Blow',
+        guest: false
       }]
   },{
-    time: { name:'12:30 PM' },
-    space: { name: 'Field 1' },
+    time: '12:30 PM',
+    space: 'Field 1',
     participants: []
   },{
-    time: { name:'11:30 AM' },
-    space: { name: 'Field 2' },
+    time: '11:30 AM',
+    space: 'Field 2',
     participants: []
   },{
-    time: { name:'12:30 PM' },
-    space: { name: 'Field 2' },
+    time: '12:30 PM',
+    space: 'Field 2',
     participants: []
   }]
 }, {
-  id: 2,
+  activityId: 2,
   name: 'Basketball',
   signups: 12,
   comments: [],
-  events: []
+  events: [],
+  notifications: []
 }, {
-  id: 3,
+  activityId: 3,
   name: 'Futsal',
   signups: 7,
   comments: [],
-  events: []
+  events: [],
+  notifications: []
 }];

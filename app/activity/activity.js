@@ -5,6 +5,7 @@ var Activity = (function () {
         this.name = '';
         this.signups = 0;
         this.comments = [];
+        this.notifications = [];
         this.events = [];
     }
     return Activity;

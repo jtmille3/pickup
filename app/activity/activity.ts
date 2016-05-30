@@ -1,6 +1,7 @@
-import { Participant } from './participant';
-import { Comment } from './comment';
-import { Event } from './event';
+import { Participant } from '../participant/participant';
+import { Comment } from '../comment/comment';
+import { Event } from '../event/event';
+import { Notification } from '../notification/notification';
 
 export class Activity {
   activityId:number = -1;
@@ -8,5 +9,6 @@ export class Activity {
   signups:number = 0;
 
   comments:Comment[] = [];
+  notifications:Notification[] = [];
   events:Event[] = [];
 }
