@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8">
+
       <notifications [notifications]="activity.notifications"></notifications>
       <form class="form-inline">
         <button *ngIf="editService.edit" class="btn btn-danger delete glyphicon glyphicon-trash" (click)="onDeleteActivity(activity)" title="Delete activity"></button>
@@ -9,7 +10,7 @@
         </div>
         <a *ngIf="editService.edit" class="add-event" (click)="onAddEvent(activity)" title="Add event"><i class="glyphicon glyphicon-plus"></i></a>
       </form>
-      <pickup-events [activity]="activity"></pickup-events>
+      <events [(events)]="activity.events"></events>
     </div>
     <div class="col-md-4">
       <div class="well">
@@ -17,7 +18,7 @@
           <bootstrap-datepicker [(date)]="date" (change)="onDateChange($event)"></bootstrap-datepicker>
         </div>
       </div>
-      <pickup-comments [comments]="activity.comments"></pickup-comments>
+      <comments [comments]="activity.comments"></comments>
     </div>
   </div>
 </div>

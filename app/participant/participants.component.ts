@@ -3,11 +3,11 @@ import { Component, Input, Output, EventEmitter, OnInit, Inject } from '@angular
 import { Participant } from '../participant/participant';
 
 @Component({
-  selector: 'pickup-participants',
-  templateUrl: 'app/pickup/pickup-participants.component.html',
-  styleUrls: ['app/pickup/pickup-participants.component.css']
+  selector: 'participants',
+  templateUrl: 'app/participant/participants.component.html',
+  styleUrls: ['app/participant/participants.component.css']
 })
-export class PickupParticipantsComponent implements OnInit {
+export class ParticipantsComponent implements OnInit {
 
   @Input() participants: Participant[];
   @Output() participantsChange:EventEmitter<Participant[]> = new EventEmitter() // an event emitter

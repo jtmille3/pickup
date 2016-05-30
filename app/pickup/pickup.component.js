@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var notifications_component_1 = require('../notification/notifications.component');
-var pickup_events_component_1 = require('./pickup-events.component');
-var pickup_comments_component_1 = require('./pickup-comments.component');
+var events_component_1 = require('../event/events.component');
+var comments_component_1 = require('../comment/comments.component');
 var event_dialog_component_1 = require('../event/event-dialog.component');
 var activity_1 = require('../activity/activity');
 var activity_service_1 = require('../activity/activity.service');
@@ -60,8 +60,8 @@ var PickupComponent = (function () {
             ],
             directives: [
                 router_1.ROUTER_DIRECTIVES,
-                pickup_events_component_1.PickupEventsComponent,
-                pickup_comments_component_1.PickupCommentsComponent,
+                events_component_1.EventsComponent,
+                comments_component_1.CommentsComponent,
                 bootstrap_datepicker_component_1.BootstrapDatePickerComponent,
                 event_dialog_component_1.EventDialogComponent,
                 notifications_component_1.NotificationsComponent

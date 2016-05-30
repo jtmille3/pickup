@@ -3,8 +3,8 @@ import { Component, Output, OnInit } from '@angular/core';
 import { Router, RouteSegment, ROUTER_DIRECTIVES } from '@angular/router';
 
 import { NotificationsComponent } from '../notification/notifications.component';
-import { PickupEventsComponent } from './pickup-events.component';
-import { PickupCommentsComponent } from './pickup-comments.component';
+import { EventsComponent } from '../event/events.component';
+import { CommentsComponent } from '../comment/comments.component';
 
 import { EventDialogComponent } from '../event/event-dialog.component';
 
@@ -24,8 +24,8 @@ import { BootstrapDatePickerComponent } from '../components/bootstrap-datepicker
   ],
   directives: [
     ROUTER_DIRECTIVES,
-    PickupEventsComponent,
-    PickupCommentsComponent,
+    EventsComponent,
+    CommentsComponent,
     BootstrapDatePickerComponent,
     EventDialogComponent,
     NotificationsComponent

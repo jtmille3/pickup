@@ -12,12 +12,12 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
-var PickupCommentsComponent = (function () {
-    function PickupCommentsComponent(USER_ID) {
+var CommentsComponent = (function () {
+    function CommentsComponent(USER_ID) {
         this.USER_ID = USER_ID;
     }
-    PickupCommentsComponent.prototype.ngOnInit = function () { };
-    PickupCommentsComponent.prototype.onSubmit = function () {
+    CommentsComponent.prototype.ngOnInit = function () { };
+    CommentsComponent.prototype.onSubmit = function () {
         if (!this.comment) {
             return;
         }
@@ -31,24 +31,24 @@ var PickupCommentsComponent = (function () {
         this.comments.push(comment);
         this.comment = '';
     };
-    PickupCommentsComponent.prototype.onDelete = function (comment) {
+    CommentsComponent.prototype.onDelete = function (comment) {
         // move this into a comment service...
         this.comments = _.without(this.comments, comment);
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
-    ], PickupCommentsComponent.prototype, "comments", void 0);
-    PickupCommentsComponent = __decorate([
+    ], CommentsComponent.prototype, "comments", void 0);
+    CommentsComponent = __decorate([
         core_1.Component({
-            selector: 'pickup-comments',
-            templateUrl: 'app/pickup/pickup-comments.component.html',
-            styleUrls: ['app/pickup/pickup-comments.component.css']
+            selector: 'comments',
+            templateUrl: 'app/comment/comments.component.html',
+            styleUrls: ['app/comment/comments.component.css']
         }),
         __param(0, core_1.Inject('USER_ID')), 
         __metadata('design:paramtypes', [Object])
-    ], PickupCommentsComponent);
-    return PickupCommentsComponent;
+    ], CommentsComponent);
+    return CommentsComponent;
 }());
-exports.PickupCommentsComponent = PickupCommentsComponent;
-//# sourceMappingURL=pickup-comments.component.js.map
+exports.CommentsComponent = CommentsComponent;
+//# sourceMappingURL=comments.component.js.map

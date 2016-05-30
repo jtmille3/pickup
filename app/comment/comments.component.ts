@@ -3,11 +3,11 @@ import { Component, Input, OnInit, Inject } from '@angular/core';
 import { Comment } from '../comment/comment';
 
 @Component({
-  selector: 'pickup-comments',
-  templateUrl: 'app/pickup/pickup-comments.component.html',
-  styleUrls: ['app/pickup/pickup-comments.component.css']
+  selector: 'comments',
+  templateUrl: 'app/comment/comments.component.html',
+  styleUrls: ['app/comment/comments.component.css']
 })
-export class PickupCommentsComponent implements OnInit {
+export class CommentsComponent implements OnInit {
 
   @Input() comments: Comment[];
   comment:string;

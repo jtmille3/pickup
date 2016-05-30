@@ -12,24 +12,24 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
-var activity_1 = require('../activity/activity');
 var participant_1 = require('../participant/participant');
-var pickup_participants_component_1 = require('./pickup-participants.component');
+var participants_component_1 = require('../participant/participants.component');
 var edit_service_1 = require('../edit.service');
-var PickupEventsComponent = (function () {
-    function PickupEventsComponent(USER_ID, editService) {
+var EventsComponent = (function () {
+    function EventsComponent(USER_ID, editService) {
         this.USER_ID = USER_ID;
         this.editService = editService;
+        this.eventsChange = new core_1.EventEmitter();
     }
-    PickupEventsComponent.prototype.ngOnInit = function () { };
-    PickupEventsComponent.prototype.onAddMe = function (event) {
+    EventsComponent.prototype.ngOnInit = function () { };
+    EventsComponent.prototype.onAddMe = function (event) {
         if (_.contains(event.participants, this.USER_ID)) {
             return;
         }
         event.participants.push(this.USER_ID);
         return false;
     };
-    PickupEventsComponent.prototype.onAddGuest = function (event) {
+    EventsComponent.prototype.onAddGuest = function (event) {
         var guest = {
             participantId: this.USER_ID.participantId,
             name: 'Guest',
@@ -38,15 +38,16 @@ var PickupEventsComponent = (function () {
         event.participants.push(guest);
         return false;
     };
-    PickupEventsComponent.prototype.onRemoveMe = function (event) {
+    EventsComponent.prototype.onRemoveMe = function (event) {
         event.participants = _.without(event.participants, this.USER_ID);
         return false;
     };
-    PickupEventsComponent.prototype.onRemoveEvent = function (event) {
-        this.activity.events = _.without(this.activity.events, event);
+    EventsComponent.prototype.onRemoveEvent = function (event) {
+        this.events = _.without(this.events, event);
+        this.eventsChange.emit(this.events);
         return false;
     };
-    PickupEventsComponent.prototype.onToggle = function (e) {
+    EventsComponent.prototype.onToggle = function (e) {
         var $toggle = $(e.currentTarget);
         //getting the next element
         var $content = $toggle.parent().parent().next();
@@ -63,21 +64,25 @@ var PickupEventsComponent = (function () {
     ;
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', activity_1.Activity)
-    ], PickupEventsComponent.prototype, "activity", void 0);
-    PickupEventsComponent = __decorate([
+        __metadata('design:type', Array)
+    ], EventsComponent.prototype, "events", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], EventsComponent.prototype, "eventsChange", void 0);
+    EventsComponent = __decorate([
         core_1.Component({
-            selector: 'pickup-events',
-            templateUrl: 'app/pickup/pickup-events.component.html',
-            styleUrls: ['app/pickup/pickup-events.component.css'],
+            selector: 'events',
+            templateUrl: 'app/event/events.component.html',
+            styleUrls: ['app/event/events.component.css'],
             directives: [
-                pickup_participants_component_1.PickupParticipantsComponent
+                participants_component_1.ParticipantsComponent
             ]
         }),
         __param(0, core_1.Inject('USER_ID')), 
         __metadata('design:paramtypes', [participant_1.Participant, edit_service_1.EditService])
-    ], PickupEventsComponent);
-    return PickupEventsComponent;
+    ], EventsComponent);
+    return EventsComponent;
 }());
-exports.PickupEventsComponent = PickupEventsComponent;
-//# sourceMappingURL=pickup-events.component.js.map
+exports.EventsComponent = EventsComponent;
+//# sourceMappingURL=events.component.js.map

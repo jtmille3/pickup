@@ -13,13 +13,13 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var core_1 = require('@angular/core');
 var participant_1 = require('../participant/participant');
-var PickupParticipantsComponent = (function () {
-    function PickupParticipantsComponent(USER_ID) {
+var ParticipantsComponent = (function () {
+    function ParticipantsComponent(USER_ID) {
         this.USER_ID = USER_ID;
         this.participantsChange = new core_1.EventEmitter(); // an event emitter
     }
-    PickupParticipantsComponent.prototype.ngOnInit = function () { };
-    PickupParticipantsComponent.prototype.onRemove = function (participant) {
+    ParticipantsComponent.prototype.ngOnInit = function () { };
+    ParticipantsComponent.prototype.onRemove = function (participant) {
         if (participant.participantId !== this.USER_ID.participantId) {
             return;
         }
@@ -29,21 +29,21 @@ var PickupParticipantsComponent = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
-    ], PickupParticipantsComponent.prototype, "participants", void 0);
+    ], ParticipantsComponent.prototype, "participants", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
-    ], PickupParticipantsComponent.prototype, "participantsChange", void 0);
-    PickupParticipantsComponent = __decorate([
+    ], ParticipantsComponent.prototype, "participantsChange", void 0);
+    ParticipantsComponent = __decorate([
         core_1.Component({
-            selector: 'pickup-participants',
-            templateUrl: 'app/pickup/pickup-participants.component.html',
-            styleUrls: ['app/pickup/pickup-participants.component.css']
+            selector: 'participants',
+            templateUrl: 'app/participant/participants.component.html',
+            styleUrls: ['app/participant/participants.component.css']
         }),
         __param(0, core_1.Inject('USER_ID')), 
         __metadata('design:paramtypes', [participant_1.Participant])
-    ], PickupParticipantsComponent);
-    return PickupParticipantsComponent;
+    ], ParticipantsComponent);
+    return ParticipantsComponent;
 }());
-exports.PickupParticipantsComponent = PickupParticipantsComponent;
-//# sourceMappingURL=pickup-participants.component.js.map
+exports.ParticipantsComponent = ParticipantsComponent;
+//# sourceMappingURL=participants.component.js.map

@@ -1,4 +1,4 @@
-<div *ngFor="let event of activity.events" class="event">
+<div *ngFor="let event of events" class="event">
   <form class="form-inline">
     <div class="form-group">
       <button class="btn btn-xs btn-link glyphicon glyphicon glyphicon-chevron-down" (click)="onToggle($event)"></button>
@@ -13,5 +13,5 @@
       </div>
     </div>
   </form>
-  <pickup-participants [(participants)]="event.participants"></pickup-participants>
+  <participants [(participants)]="event.participants"></participants>
 </div>

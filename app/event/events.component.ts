@@ -1,24 +1,25 @@
-import { Component, Input, Output, OnInit, Inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit, Inject } from '@angular/core';
 
 import { Activity } from '../activity/activity';
 import { Event } from '../event/event';
 import { Participant } from '../participant/participant';
 
-import { PickupParticipantsComponent } from './pickup-participants.component';
+import { ParticipantsComponent } from '../participant/participants.component';
 
 import { EditService } from '../edit.service';
 
 @Component({
-  selector: 'pickup-events',
-  templateUrl: 'app/pickup/pickup-events.component.html',
-  styleUrls: ['app/pickup/pickup-events.component.css'],
+  selector: 'events',
+  templateUrl: 'app/event/events.component.html',
+  styleUrls: ['app/event/events.component.css'],
   directives: [
-    PickupParticipantsComponent
+    ParticipantsComponent
   ]
 })
-export class PickupEventsComponent implements OnInit {
+export class EventsComponent implements OnInit {
 
-  @Input() activity: Activity;
+  @Input() events: Event[];
+  @Output() eventsChange: EventEmitter<Event[]> = new EventEmitter();
 
   constructor(
     @Inject('USER_ID') private USER_ID:Participant,
@@ -56,8 +57,8 @@ export class PickupEventsComponent implements OnInit {
   }
 
   onRemoveEvent(event:Event) {
-    this.activity.events = _.without(this.activity.events, event);
-
+    this.events = _.without(this.events, event);
+    this.eventsChange.emit(this.events);
     return false;
   }
 
