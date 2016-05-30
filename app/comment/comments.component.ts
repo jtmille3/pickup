@@ -25,7 +25,7 @@ export class CommentsComponent implements OnInit {
 
     // move this into a comment service...
     var comment:Comment = {
-      commentId: -1,
+      commentId: Math.random() * 10000000,
       participantId: this.USER_ID.participantId,
       text: this.comment,
       timestamp: new Date()

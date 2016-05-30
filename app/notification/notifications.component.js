@@ -19,7 +19,12 @@ var NotificationsComponent = (function () {
     }
     NotificationsComponent.prototype.ngOnInit = function () {
         var suppression = this.getSuppression();
-        this.notifications = _.filter(this.notifications, function (notification) { return !_.contains(suppression, notification.notificationId); });
+        var i = this.notifications.length;
+        while (i--) {
+            if (_.contains(suppression, this.notifications[i].notificationId)) {
+                this.notifications.splice(i, 1);
+            }
+        }
     };
     NotificationsComponent.prototype.onClose = function (notification) {
         var suppression = this.getSuppression();

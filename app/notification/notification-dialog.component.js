@@ -24,12 +24,14 @@ var NotificationDialogComponent = (function () {
             return;
         }
         var notification = {
-            notificationId: -1,
+            notificationId: Math.random() * 10000000,
             text: this.text,
             type: this.type
         };
         NotificationDialogComponent.activity.notifications.push(notification);
         $('#notification-modal').modal('hide');
+        this.text = '';
+        this.type = notification_1.NotificationType.Info;
     };
     NotificationDialogComponent.show = function (activity) {
         NotificationDialogComponent.activity = activity;

@@ -33,7 +33,7 @@ export class NotificationDialogComponent implements OnInit {
     }
 
     var notification:Notification = {
-      notificationId: -1,
+      notificationId: Math.random() * 10000000,
       text: this.text,
       type: this.type
     };
@@ -41,6 +41,9 @@ export class NotificationDialogComponent implements OnInit {
     NotificationDialogComponent.activity.notifications.push(notification);
 
     $('#notification-modal').modal('hide');
+
+    this.text = '';
+    this.type = NotificationType.Info;
   }
 
   public static show(activity:Activity):void {

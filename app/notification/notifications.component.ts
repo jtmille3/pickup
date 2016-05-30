@@ -22,7 +22,13 @@ export class NotificationsComponent implements OnInit {
 
   ngOnInit() {
     var suppression:number[] = this.getSuppression();
-    this.notifications = _.filter(this.notifications, notification => !_.contains(suppression, notification.notificationId));
+
+    var i:number = this.notifications.length;
+    while(i--) {
+      if(_.contains(suppression, this.notifications[i].notificationId)) {
+        this.notifications.splice(i, 1);
+      }
+    }
   }
 
   onClose(notification:Notification) {

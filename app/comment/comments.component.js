@@ -23,7 +23,7 @@ var CommentsComponent = (function () {
         }
         // move this into a comment service...
         var comment = {
-            commentId: -1,
+            commentId: Math.random() * 10000000,
             participantId: this.USER_ID.participantId,
             text: this.comment,
             timestamp: new Date()
