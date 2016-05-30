@@ -35,3 +35,4 @@ Finish services
  - Activities
  - Events
  - Comments
+Add confirmation for any delete edits

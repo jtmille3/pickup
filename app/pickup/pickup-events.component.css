@@ -11,6 +11,14 @@
   border-width: 1px 0px;
 }
 
+.event .form-inline {
+  cursor:pointer;
+}
+
+.btn-link {
+  text-decoration: none;
+}
+
 .event .control-label {
   font-size: 20px;
   margin: 0px 5px;

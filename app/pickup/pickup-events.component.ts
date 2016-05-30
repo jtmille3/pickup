@@ -8,6 +8,8 @@ import { PickupParticipantsComponent } from './pickup-participants.component';
 
 import { EditService } from '../edit.service';
 
+declare var $;
+
 @Component({
   selector: 'pickup-events',
   templateUrl: 'app/pickup/pickup-events.component.html',
@@ -60,4 +62,18 @@ export class PickupEventsComponent implements OnInit {
 
     return false;
   }
+
+  onToggle(e) {
+    var $toggle = $(e.currentTarget);
+    //getting the next element
+    var $content = $toggle.parent().parent().next();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $content.slideToggle(200, () => {
+      if($content.is(':visible')) {
+        $toggle.removeClass('glyphicon glyphicon-chevron-up').addClass('glyphicon glyphicon-chevron-down');
+      } else {
+        $toggle.removeClass('glyphicon glyphicon-chevron-down').addClass('glyphicon glyphicon-chevron-up');
+      }
+    });
+  };
 }

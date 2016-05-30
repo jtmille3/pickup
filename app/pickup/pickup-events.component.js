@@ -46,6 +46,21 @@ var PickupEventsComponent = (function () {
         this.activity.events = _.without(this.activity.events, event);
         return false;
     };
+    PickupEventsComponent.prototype.onToggle = function (e) {
+        var $toggle = $(e.currentTarget);
+        //getting the next element
+        var $content = $toggle.parent().parent().next();
+        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+        $content.slideToggle(200, function () {
+            if ($content.is(':visible')) {
+                $toggle.removeClass('glyphicon glyphicon-chevron-up').addClass('glyphicon glyphicon-chevron-down');
+            }
+            else {
+                $toggle.removeClass('glyphicon glyphicon-chevron-down').addClass('glyphicon glyphicon-chevron-up');
+            }
+        });
+    };
+    ;
     __decorate([
         core_1.Input(), 
         __metadata('design:type', activity_1.Activity)
