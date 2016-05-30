@@ -6,11 +6,13 @@ import { PickupComponent } from './pickup/pickup.component';
 
 import { EditService } from './edit.service';
 
+import { WeatherComponent } from './weather/weather.component';
+
 @Component({
   selector: 'app',
   templateUrl: 'app/app.component.html',
   styleUrls: ['app/app.component.css'],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, WeatherComponent]
 })
 @Routes([
   { path: '/', component: DashboardComponent },

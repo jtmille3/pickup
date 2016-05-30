@@ -13,6 +13,7 @@ var router_1 = require('@angular/router');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
 var pickup_component_1 = require('./pickup/pickup.component');
 var edit_service_1 = require('./edit.service');
+var weather_component_1 = require('./weather/weather.component');
 var AppComponent = (function () {
     function AppComponent(editService) {
         this.editService = editService;
@@ -27,7 +28,7 @@ var AppComponent = (function () {
             selector: 'app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            directives: [router_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES, weather_component_1.WeatherComponent]
         }),
         router_1.Routes([
             { path: '/', component: dashboard_component_1.DashboardComponent },
