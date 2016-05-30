@@ -15,6 +15,7 @@ var events_component_1 = require('../event/events.component');
 var comments_component_1 = require('../comment/comments.component');
 var notification_dialog_component_1 = require('../notification/notification-dialog.component');
 var event_dialog_component_1 = require('../event/event-dialog.component');
+var links_component_1 = require('../link/links.component');
 var activity_1 = require('../activity/activity');
 var activity_service_1 = require('../activity/activity.service');
 var edit_service_1 = require('../edit.service');
@@ -69,7 +70,8 @@ var PickupComponent = (function () {
                 bootstrap_datepicker_component_1.BootstrapDatePickerComponent,
                 event_dialog_component_1.EventDialogComponent,
                 notification_dialog_component_1.NotificationDialogComponent,
-                notifications_component_1.NotificationsComponent
+                notifications_component_1.NotificationsComponent,
+                links_component_1.LinksComponent
             ]
         }), 
         __metadata('design:paramtypes', [activity_service_1.ActivityService, edit_service_1.EditService, router_1.Router, router_1.RouteSegment])

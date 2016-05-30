@@ -7,6 +7,7 @@ import { EventsComponent } from '../event/events.component';
 import { CommentsComponent } from '../comment/comments.component';
 import { NotificationDialogComponent } from '../notification/notification-dialog.component';
 import { EventDialogComponent } from '../event/event-dialog.component';
+import { LinksComponent } from '../link/links.component';
 
 import { Activity } from '../activity/activity';
 import { ActivityService } from '../activity/activity.service';
@@ -29,7 +30,8 @@ import { BootstrapDatePickerComponent } from '../components/bootstrap-datepicker
     BootstrapDatePickerComponent,
     EventDialogComponent,
     NotificationDialogComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    LinksComponent
   ]
 })
 export class PickupComponent implements OnInit {

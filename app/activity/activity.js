@@ -7,6 +7,7 @@ var Activity = (function () {
         this.comments = [];
         this.notifications = [];
         this.events = [];
+        this.links = [];
     }
     return Activity;
 }());

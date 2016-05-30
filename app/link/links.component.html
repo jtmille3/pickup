@@ -1,0 +1,9 @@
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li *ngFor="let link of links"><a [href]="link.href">{{link.text}}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -68,6 +68,13 @@ var ACTIVITIES = [{
   activityId: 1,
   name: 'Soccer',
   signups: 23,
+  links: [
+    {
+      linkId: 1,
+      text: 'Test',
+      href: 'http://google.com'
+    }
+  ],
   notifications: [
     {
       notificationId: 1,
@@ -116,12 +123,14 @@ var ACTIVITIES = [{
   signups: 12,
   comments: [],
   events: [],
-  notifications: []
+  notifications: [],
+  links: []
 }, {
   activityId: 3,
   name: 'Futsal',
   signups: 7,
   comments: [],
   events: [],
-  notifications: []
+  notifications: [],
+  links: []
 }];

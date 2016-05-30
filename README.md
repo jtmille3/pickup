@@ -19,8 +19,6 @@ This app provides an interface for players to sign up for pick up games and get 
 Jeff will put some stuff here about working on the app :D
 
 TODO:
-Notifications per activity (Warn, Info, Success, Danger)
- - Make notifications easy to add from the activity
 Hyperlinks per activity (mailing lists, RFC info, field status, gym status, etc)
 Add icons for dashboard activities?
 Work on styling, very grayish right now.
@@ -32,4 +30,6 @@ Finish services
  - Activities
  - Events
  - Comments
+ - Notifications
+ - Links
 Add confirmation for any delete edits
