@@ -71,8 +71,13 @@ var ACTIVITIES = [{
   links: [
     {
       linkId: 1,
-      text: 'Test',
-      href: 'http://google.com'
+      text: 'Mailing List',
+      href: 'http://sas.com/mailing/list'
+    },
+    {
+      linkId: 2,
+      text: 'Competitive',
+      href: 'http://soccer/comp'
     }
   ],
   notifications: [
