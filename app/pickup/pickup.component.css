@@ -5,9 +5,7 @@
 }
 
 .add-event {
-  position: absolute;
-  top: 0px;
-  right: 20px;
+  float: right;
   background-color: #337ab7;
   color: #fff;
   width: 50px;
@@ -17,7 +15,7 @@
 }
 
 .add-event > i {
-  position: absolute;
+  position: relative;
   top: 17px;
   left: 19px;
 }
