@@ -19,11 +19,8 @@ import { WeatherComponent } from './weather/weather.component';
   { path: '/pickup/:name/:date', component: PickupComponent }
 ])
 export class AppComponent {
-  year:number;
 
-  constructor(private editService:EditService) {
-    this.year = new Date().getFullYear();
-  }
+  constructor(private editService:EditService) {}
 
   onToggleEdit() {
     this.editService.toggle();

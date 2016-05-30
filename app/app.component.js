@@ -17,7 +17,6 @@ var weather_component_1 = require('./weather/weather.component');
 var AppComponent = (function () {
     function AppComponent(editService) {
         this.editService = editService;
-        this.year = new Date().getFullYear();
     }
     AppComponent.prototype.onToggleEdit = function () {
         this.editService.toggle();

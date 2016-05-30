@@ -1,6 +1,8 @@
-import { Component, Input, OnInit, Inject } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, Inject } from '@angular/core';
 
 import { Notification, NotificationType } from './notification';
+
+import { EditService } from '../edit.service';
 
 @Component({
   selector: 'notifications',
@@ -10,21 +12,28 @@ import { Notification, NotificationType } from './notification';
 export class NotificationsComponent implements OnInit {
 
   @Input() notifications:Notification[];
+  @Output() notificationsChange:EventEmitter<Notification[]> = new EventEmitter();
 
   public notificationType = NotificationType;
 
   constructor(
+    private editService:EditService
   ) {}
 
   ngOnInit() {
     var suppression:number[] = this.getSuppression();
     this.notifications = _.filter(this.notifications, notification => !_.contains(suppression, notification.notificationId));
-  };
+  }
 
   onClose(notification:Notification) {
     var suppression:number[] = this.getSuppression();
     suppression.push(notification.notificationId);
     this.setSuppression(suppression);
+  }
+
+  onDelete(notification:Notification) {
+    this.notifications = _.without(this.notifications, notification);
+    this.notificationsChange.emit(this.notifications);
   }
 
   private getSuppression():number[] {

@@ -10,19 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var notification_1 = require('./notification');
+var edit_service_1 = require('../edit.service');
 var NotificationsComponent = (function () {
-    function NotificationsComponent() {
+    function NotificationsComponent(editService) {
+        this.editService = editService;
+        this.notificationsChange = new core_1.EventEmitter();
         this.notificationType = notification_1.NotificationType;
     }
     NotificationsComponent.prototype.ngOnInit = function () {
         var suppression = this.getSuppression();
         this.notifications = _.filter(this.notifications, function (notification) { return !_.contains(suppression, notification.notificationId); });
     };
-    ;
     NotificationsComponent.prototype.onClose = function (notification) {
         var suppression = this.getSuppression();
         suppression.push(notification.notificationId);
         this.setSuppression(suppression);
+    };
+    NotificationsComponent.prototype.onDelete = function (notification) {
+        this.notifications = _.without(this.notifications, notification);
+        this.notificationsChange.emit(this.notifications);
     };
     NotificationsComponent.prototype.getSuppression = function () {
         return JSON.parse(localStorage.getItem('notification-suppression') || '[]');
@@ -34,13 +40,17 @@ var NotificationsComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', Array)
     ], NotificationsComponent.prototype, "notifications", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], NotificationsComponent.prototype, "notificationsChange", void 0);
     NotificationsComponent = __decorate([
         core_1.Component({
             selector: 'notifications',
             templateUrl: 'app/notification/notifications.component.html',
             styleUrls: ['app/notification/notifications.component.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [edit_service_1.EditService])
     ], NotificationsComponent);
     return NotificationsComponent;
 }());

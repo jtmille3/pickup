@@ -2,7 +2,7 @@
   <form class="form-inline">
     <div class="form-group">
       <button class="btn btn-xs btn-link glyphicon glyphicon glyphicon-chevron-down" (click)="onToggle($event)"></button>
-      <button *ngIf="editService.edit" class="btn btn-danger btn-xs glyphicon glyphicon-trash" (click)="onRemoveEvent(event)" title="Delete event"></button>
+      <button *ngIf="editService.edit" class="btn btn-danger btn-xs" (click)="onRemoveEvent(event)" title="Delete event"><i class="glyphicon glyphicon-trash"></i> Delete event</button>
       <span class="control-label">{{event.space}} @ {{event.time}}</span>
       <button *ngIf="event.participants.indexOf(USER_ID) === -1 && !editService.edit" class="btn btn-xs btn-success signup" (click)="onAddMe(event)"><i class="glyphicon glyphicon-thumbs-up"></i> I'm in!</button>
       <!-- <button *ngIf="event.participants.indexOf(USER_ID) !== -1 && !editService.edit" class="btn btn-xs btn-danger signup" (click)="onRemoveMe(event)"><i class="glyphicon glyphicon-thumbs-down"></i> I'm out!</button> -->
