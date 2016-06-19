@@ -19,7 +19,7 @@ import { EditService } from '../edit.service';
 export class EventsComponent implements OnInit {
 
   @Input() events: Event[];
-  @Output() eventsChange: EventEmitter<Event[]> = new EventEmitter();
+  @Output() eventsChange: EventEmitter<Event[]> = new EventEmitter<Event[]>();
 
   constructor(
     @Inject('USER_ID') private USER_ID:Participant,

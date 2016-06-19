@@ -7,7 +7,7 @@ import { Component, Input, Output, OnInit, OnChanges, ElementRef, EventEmitter }
 export class BootstrapDatePickerComponent implements OnInit, OnChanges {
 
   @Input() date:string;
-  @Output() dateChange:EventEmitter<string> = new EventEmitter() // an event emitter
+  @Output() dateChange:EventEmitter<string> = new EventEmitter<string>() // an event emitter
   @Output() change:EventEmitter<any> = new EventEmitter() // an event emitter
 
   constructor(private element: ElementRef) {}

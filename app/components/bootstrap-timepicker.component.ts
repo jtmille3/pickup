@@ -7,8 +7,8 @@ import { Component, Input, Output, OnInit, OnChanges, ElementRef, EventEmitter }
 export class BootstrapTimePickerComponent implements OnInit, OnChanges {
 
   @Input() time:string;
-  @Output() timeChange:EventEmitter<string> = new EventEmitter() // an event emitter
-  @Output() change:EventEmitter<string> = new EventEmitter() // an event emitter
+  @Output() timeChange:EventEmitter<string> = new EventEmitter<string>() // an event emitter
+  @Output() change:EventEmitter<string> = new EventEmitter<string>() // an event emitter
 
   constructor(private element: ElementRef) {}
 

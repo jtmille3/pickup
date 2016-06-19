@@ -12,7 +12,7 @@ import { EditService } from '../edit.service';
 export class NotificationsComponent implements OnInit {
 
   @Input() notifications:Notification[];
-  @Output() notificationsChange:EventEmitter<Notification[]> = new EventEmitter();
+  @Output() notificationsChange:EventEmitter<Notification[]> = new EventEmitter<Notification[]>();
 
   public notificationType = NotificationType;
 

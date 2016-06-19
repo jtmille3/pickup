@@ -10,7 +10,7 @@ import { Participant } from '../participant/participant';
 export class ParticipantsComponent implements OnInit {
 
   @Input() participants: Participant[];
-  @Output() participantsChange:EventEmitter<Participant[]> = new EventEmitter() // an event emitter
+  @Output() participantsChange:EventEmitter<Participant[]> = new EventEmitter<Participant[]>() // an event emitter
 
   constructor(@Inject('USER_ID') private USER_ID:Participant) {}
 

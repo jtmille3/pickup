@@ -12,7 +12,7 @@ import { EditService } from '../edit.service';
 export class LinksComponent implements OnInit {
 
   @Input() links:Link[];
-  @Output() linksChange:EventEmitter<Link[]> = new EventEmitter();
+  @Output() linksChange:EventEmitter<Link[]> = new EventEmitter<Link[]>();
 
   constructor(
     private editService:EditService
