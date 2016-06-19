@@ -8,3 +8,8 @@ html, body {
 body {
   padding: 70px 0px;
 }
+
+.loading {
+  margin: 0 auto;
+  text-align: center;
+}

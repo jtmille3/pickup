@@ -1,28 +1,29 @@
 <html>
   <head>
+    <!-- this is the root directory, change if off the root '/' -->
     <base href="/">
     <title>Pickup</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-datetimepicker-build/build/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-datetimepicker-build/build/css/bootstrap-datetimepicker.css">
 
     <!-- 1. Load libraries -->
      <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="/node_modules/es6-shim/es6-shim.min.js"></script>
 
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/underscore/underscore.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="node_modules/moment/moment.js"></script>
-    <script src="node_modules/bootstrap-datetimepicker-build/src/js/bootstrap-datetimepicker.js"></script>
+    <script src="/node_modules/zone.js/dist/zone.js"></script>
+    <script src="/node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/underscore/underscore.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/node_modules/moment/moment.js"></script>
+    <script src="/node_modules/bootstrap-datetimepicker-build/src/js/bootstrap-datetimepicker.js"></script>
 
     <!-- 2. Configure SystemJS -->
-    <script src="system.config.js"></script>
+    <script src="/system.config.js"></script>
     <script>
       System.import('app').catch(function(err){ console.error(err);  });
     </script>
@@ -30,6 +31,8 @@
 
   <!-- 3. Display the application -->
   <body>
-    <app>Loading...</app>
+    <app>
+      <div class="loading">Loading...</div>
+    </app>
   </body>
 </html>
